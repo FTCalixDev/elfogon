@@ -58,7 +58,7 @@
         font-size: 16px;
         line-height: 1.6;
         -webkit-font-smoothing: antialiased;
-        overflow-x: hidden;
+        overflow-x: clip;
       }
 
       body {
@@ -67,7 +67,8 @@
         min-height: 100vh;
         display: flex;
         flex-direction: column;
-        overflow-x: hidden;
+        overflow-x: clip;
+        padding-top: 68px;
       }
 
       img {
@@ -98,13 +99,17 @@
         font-variant-numeric: tabular-nums;
       }
 
-      /* Top Navigation Bar (Strict 3-Zone Contract) */
+      /* Top Navigation Bar (Always Fixed on Screen) */
       .site-header {
-        position: sticky;
+        position: fixed;
         top: 0;
-        z-index: 40;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 1000;
         background-color: var(--bg-forest-deep);
         border-bottom: 1px solid var(--gold-muted);
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.28);
         color: var(--cream-canvas);
         height: 68px;
         display: flex;
@@ -257,6 +262,7 @@
           color: var(--gold-primary);
         }
         body {
+          padding-top: 52px;
           padding-bottom: 54px;
         }
       }
