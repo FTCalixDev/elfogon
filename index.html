@@ -1,0 +1,4226 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>El Fogón Parrillada — Montevideo 1962</title>
+    <meta
+      name="description"
+      content="Sitio web oficial y carta digital interactiva de El Fogón Parrillada (San José 1080, Centro de Montevideo). Tradición en carnes asadas, cortes Dry Aged, pastas caseras, mariscos y cava de vinos desde 1962."
+    />
+    <meta property="og:title" content="El Fogón Parrillada — Montevideo 1962" />
+    <meta
+      property="og:description"
+      content="Sitio web oficial y carta digital interactiva de El Fogón Parrillada (San José 1080, Centro de Montevideo). Tradición en carnes asadas, cortes Dry Aged, pastas caseras, mariscos y cava de vinos desde 1962."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-forest-deep: #0f2219;
+        --bg-forest: #163024;
+        --bg-forest-soft: #1d3d2e;
+        --gold-primary: #d9a04e;
+        --gold-hover: #c28836;
+        --gold-muted: rgba(217, 160, 78, 0.26);
+        --cream-canvas: #f8f6f0;
+        --cream-card: #ffffff;
+        --cream-warm: #f1ede2;
+        --charcoal-text: #1c1c1c;
+        --charcoal-muted: #57534e;
+        --border-light: rgba(22, 48, 36, 0.13);
+        --danger: #b91c1c;
+        --success: #15803d;
+        --font-serif: 'Cormorant Garamond', Georgia, serif;
+        --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        --transition-fast: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        background-color: var(--cream-canvas);
+        color: var(--charcoal-text);
+        font-family: var(--font-sans);
+        font-size: 16px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+
+      body {
+        background-color: var(--cream-canvas);
+        color: var(--charcoal-text);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      button,
+      input,
+      select,
+      textarea {
+        font: inherit;
+        color: inherit;
+      }
+
+      button {
+        cursor: pointer;
+        border: none;
+        background: none;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .tabular-nums {
+        font-variant-numeric: tabular-nums;
+      }
+
+      /* Top Navigation Bar (Strict 3-Zone Contract) */
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 40;
+        background-color: var(--bg-forest-deep);
+        border-bottom: 1px solid var(--gold-muted);
+        color: var(--cream-canvas);
+        height: 68px;
+        display: flex;
+        align-items: center;
+      }
+
+      .header-inner {
+        width: 100%;
+        max-width: 1240px;
+        margin: 0 auto;
+        padding: 0 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 32px;
+      }
+
+      .brand-logo-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      .brand-logo-img {
+        height: 44px;
+        width: auto;
+        border-radius: 6px;
+        border: 1.5px solid rgba(248, 246, 240, 0.35);
+        display: block;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28);
+      }
+
+      .desktop-nav {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+      }
+
+      .nav-link {
+        font-size: 0.94rem;
+        font-weight: 600;
+        color: rgba(248, 246, 240, 0.86);
+        white-space: nowrap;
+        flex-shrink: 0;
+        padding: 6px 0;
+        position: relative;
+        transition: color var(--transition-fast);
+      }
+
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 2px;
+        background-color: var(--gold-primary);
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform var(--transition-fast);
+      }
+
+      .nav-link:hover,
+      .nav-link.active {
+        color: #ffffff;
+      }
+
+      .nav-link.active::after,
+      .nav-link:hover::after {
+        transform: scaleX(1);
+      }
+
+      .header-cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 9px 18px;
+        background-color: var(--gold-primary);
+        color: var(--bg-forest-deep);
+        font-size: 0.875rem;
+        font-weight: 700;
+        border-radius: 6px;
+        white-space: nowrap;
+        flex-shrink: 0;
+        transition: background-color var(--transition-fast), transform var(--transition-fast);
+      }
+
+      .header-cta:hover {
+        background-color: var(--gold-hover);
+        transform: translateY(-1px);
+      }
+
+      /* Mobile Thumb-Friendly Bottom Nav (<= 768px, strictly under 15% viewport cap) */
+      .mobile-bottom-nav {
+        display: none;
+      }
+
+      @media (max-width: 768px) {
+        .site-header {
+          height: 52px;
+        }
+        .header-inner {
+          padding: 0 14px;
+          gap: 10px;
+        }
+        .desktop-nav {
+          display: none;
+        }
+        .brand-logo-img {
+          height: 36px;
+        }
+        .header-cta {
+          padding: 6px 12px;
+          font-size: 0.78rem;
+        }
+        .mobile-bottom-nav {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 54px;
+          background-color: var(--bg-forest-deep);
+          border-top: 1px solid var(--gold-muted);
+          z-index: 45;
+          padding: 0 4px;
+        }
+        .mobile-nav-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 2px;
+          color: rgba(248, 246, 240, 0.74);
+          font-size: 0.7rem;
+          font-weight: 600;
+          white-space: nowrap;
+          transition: color var(--transition-fast);
+        }
+        .mobile-nav-item svg {
+          width: 18px;
+          height: 18px;
+          stroke-width: 1.9;
+        }
+        .mobile-nav-item.active {
+          color: var(--gold-primary);
+        }
+        body {
+          padding-bottom: 54px;
+        }
+      }
+
+      /* View Container & Transitions */
+      main {
+        flex: 1;
+      }
+
+      .page-view {
+        display: none;
+        animation: viewFade 220ms cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .page-view.active {
+        display: block;
+      }
+
+      @keyframes viewFade {
+        from {
+          opacity: 0;
+          transform: translateY(6px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .reveal-up {
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+          transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .reveal-up.pending-reveal {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      @media (max-width: 640px) {
+        .container {
+          padding: 0 16px;
+        }
+      }
+
+      /* Official Gold Logo Badge */
+      .official-logo-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 14px;
+        background-color: #d4a253;
+        color: #163024;
+        padding: 10px 20px;
+        border-radius: 10px;
+        border: 2px solid rgba(248, 246, 240, 0.35);
+        margin-bottom: 18px;
+        width: fit-content;
+      }
+
+      .official-logo-badge-title {
+        font-family: var(--font-serif);
+        font-size: 1.55rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        line-height: 1;
+        color: #163024;
+      }
+
+      .official-logo-badge-sub {
+        font-size: 0.66rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #163024;
+        margin-top: 3px;
+      }
+
+      /* Hero Section (#inicio) */
+      .hero-section {
+        background-color: var(--bg-forest-deep);
+        color: var(--cream-canvas);
+        position: relative;
+        overflow: hidden;
+        padding: 52px 0 48px;
+        border-bottom: 1px solid var(--gold-muted);
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.08fr 0.92fr;
+        gap: 44px;
+        align-items: stretch;
+      }
+
+      .hero-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .hero-kicker {
+        font-size: 0.82rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--gold-primary);
+        font-weight: 600;
+        margin-bottom: 12px;
+      }
+
+      .hero-title {
+        font-family: var(--font-serif);
+        font-size: clamp(2.25rem, 4vw, 3.6rem);
+        line-height: 1.08;
+        font-weight: 700;
+        color: var(--cream-canvas);
+        text-wrap: balance;
+        margin-bottom: 18px;
+      }
+
+      .hero-title em {
+        color: var(--gold-primary);
+        font-style: italic;
+      }
+
+      .hero-lead {
+        font-size: 1.02rem;
+        color: rgba(248, 246, 240, 0.88);
+        max-width: 58ch;
+        margin-bottom: 24px;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 24px;
+      }
+
+      .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 13px 24px;
+        background-color: var(--gold-primary);
+        color: var(--bg-forest-deep);
+        font-weight: 700;
+        font-size: 0.94rem;
+        border-radius: 7px;
+        white-space: nowrap;
+        transition: background-color var(--transition-fast), transform var(--transition-fast);
+      }
+
+      .btn-primary:hover {
+        background-color: var(--gold-hover);
+        transform: translateY(-1px);
+      }
+
+      .btn-secondary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 13px 22px;
+        background-color: transparent;
+        color: var(--cream-canvas);
+        border: 1px solid var(--gold-primary);
+        font-weight: 600;
+        font-size: 0.94rem;
+        border-radius: 7px;
+        white-space: nowrap;
+        transition: background-color var(--transition-fast);
+      }
+
+      .btn-secondary:hover {
+        background-color: rgba(217, 160, 78, 0.15);
+      }
+
+      .btn-outline-dark {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 10px 18px;
+        background-color: transparent;
+        color: var(--bg-forest);
+        border: 1px solid var(--bg-forest);
+        font-weight: 600;
+        font-size: 0.88rem;
+        border-radius: 7px;
+        white-space: nowrap;
+        transition: background-color var(--transition-fast), color var(--transition-fast);
+      }
+
+      .btn-outline-dark:hover {
+        background-color: var(--bg-forest);
+        color: var(--cream-canvas);
+      }
+
+      /* Social Media & Circular Google Maps Button Bar */
+      .social-quick-bar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 12px;
+        padding-top: 16px;
+        border-top: 1px solid rgba(217, 160, 78, 0.22);
+      }
+
+      .social-pill-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 14px;
+        border-radius: 8px;
+        background-color: rgba(255, 255, 255, 0.08);
+        border: 1px solid var(--gold-muted);
+        color: var(--cream-canvas);
+        font-size: 0.84rem;
+        font-weight: 600;
+        white-space: nowrap;
+        transition: background-color var(--transition-fast), border-color var(--transition-fast);
+      }
+
+      .social-pill-link:hover {
+        background-color: rgba(217, 160, 78, 0.2);
+        border-color: var(--gold-primary);
+      }
+
+      /* Botón Circular con el Logo de Google Maps */
+      .gmaps-circle-btn {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        background-color: #ffffff;
+        border: 2px solid var(--gold-primary);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.28);
+        transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+      }
+
+      .gmaps-circle-btn:hover {
+        transform: scale(1.06);
+        box-shadow: 0 6px 16px rgba(217, 160, 78, 0.45);
+      }
+
+      .hero-media-card {
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid var(--gold-muted);
+        min-height: 400px;
+        background-color: var(--bg-forest);
+        display: flex;
+      }
+
+      .hero-media-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 55%;
+      }
+
+      .hero-media-scrim {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(15, 34, 25, 0.92) 0%,
+          rgba(15, 34, 25, 0.32) 45%,
+          transparent 100%
+        );
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 24px;
+      }
+
+      .hero-caption-title {
+        font-family: var(--font-serif);
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--cream-canvas);
+      }
+
+      .hero-caption-sub {
+        font-size: 0.84rem;
+        color: var(--gold-primary);
+      }
+
+      .kpi-strip {
+        margin-top: 36px;
+        padding-top: 26px;
+        border-top: 1px solid rgba(217, 160, 78, 0.22);
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+      }
+
+      .kpi-item {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .kpi-value {
+        font-family: var(--font-serif);
+        font-size: 1.7rem;
+        font-weight: 700;
+        color: var(--gold-primary);
+        line-height: 1.1;
+      }
+
+      .kpi-label {
+        font-size: 0.82rem;
+        color: rgba(248, 246, 240, 0.82);
+      }
+
+      @media (max-width: 960px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+          gap: 28px;
+        }
+        .hero-media-card {
+          min-height: 280px;
+        }
+        .kpi-strip {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 18px;
+        }
+      }
+
+      /* Section Blocks */
+      .section-block {
+        padding: 58px 0;
+      }
+
+      .section-block.bg-warm {
+        background-color: var(--cream-warm);
+        border-top: 1px solid var(--border-light);
+        border-bottom: 1px solid var(--border-light);
+      }
+
+      .section-block.bg-forest-dark {
+        background-color: var(--bg-forest);
+        color: var(--cream-canvas);
+        border-top: 1px solid var(--gold-muted);
+        border-bottom: 1px solid var(--gold-muted);
+      }
+
+      .section-header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 32px;
+      }
+
+      .section-kicker {
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--gold-hover);
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
+
+      .bg-forest-dark .section-kicker {
+        color: var(--gold-primary);
+      }
+
+      .section-title {
+        font-family: var(--font-serif);
+        font-size: clamp(1.8rem, 3vw, 2.5rem);
+        line-height: 1.15;
+        font-weight: 700;
+        text-wrap: balance;
+      }
+
+      .section-subtitle {
+        font-size: 0.95rem;
+        color: var(--charcoal-muted);
+        max-width: 62ch;
+        margin-top: 6px;
+      }
+
+      .bg-forest-dark .section-subtitle {
+        color: rgba(248, 246, 240, 0.82);
+      }
+
+      /* Specialties Grid */
+      .specialties-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 18px;
+      }
+
+      .specialty-card {
+        background-color: var(--cream-card);
+        border: 1px solid var(--border-light);
+        border-radius: 10px;
+        overflow: hidden;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        transition: transform var(--transition-fast), border-color var(--transition-fast);
+      }
+
+      .specialty-card:hover {
+        transform: translateY(-3px);
+        border-color: var(--gold-primary);
+      }
+
+      .specialty-img-wrap {
+        aspect-ratio: 4 / 3;
+        overflow: hidden;
+        background-color: var(--bg-forest);
+      }
+
+      .specialty-img-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.35s ease;
+      }
+
+      .specialty-card:hover .specialty-img-wrap img {
+        transform: scale(1.04);
+      }
+
+      .specialty-body {
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        flex: 1;
+      }
+
+      .specialty-meta {
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--gold-hover);
+        font-weight: 700;
+      }
+
+      .specialty-name {
+        font-family: var(--font-serif);
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--bg-forest-deep);
+      }
+
+      .specialty-desc {
+        font-size: 0.84rem;
+        color: var(--charcoal-muted);
+        line-height: 1.45;
+      }
+
+      @media (max-width: 1024px) {
+        .specialties-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      @media (max-width: 640px) {
+        .specialties-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 12px;
+        }
+      }
+
+      /* Dish Cards Grid (#carta and Featured) */
+      .dishes-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+      }
+
+      @media (max-width: 960px) {
+        .dishes-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 18px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .dishes-grid {
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+      }
+
+      .dish-card {
+        background-color: var(--cream-card);
+        border: 1px solid var(--border-light);
+        border-radius: 10px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: transform var(--transition-fast), border-color var(--transition-fast);
+      }
+
+      .dish-card:hover {
+        transform: translateY(-2px);
+        border-color: var(--gold-primary);
+      }
+
+      .dish-image-box {
+        aspect-ratio: 4 / 3;
+        width: 100%;
+        background-color: var(--bg-forest);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .dish-image-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .dish-body {
+        padding: 18px 20px;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        justify-content: space-between;
+        gap: 10px;
+      }
+
+      .dish-kicker {
+        font-size: 0.75rem;
+        color: var(--charcoal-muted);
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin-bottom: 4px;
+      }
+
+      .dish-kicker-highlight {
+        color: var(--gold-hover);
+        font-weight: 700;
+      }
+
+      .dish-title-row {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 4px;
+      }
+
+      .dish-title {
+        font-family: var(--font-serif);
+        font-size: 1.32rem;
+        font-weight: 700;
+        color: var(--bg-forest-deep);
+        line-height: 1.2;
+      }
+
+      .dish-price {
+        font-family: var(--font-sans);
+        font-size: 1.02rem;
+        font-weight: 700;
+        color: var(--bg-forest);
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      .dish-desc {
+        font-size: 0.88rem;
+        color: var(--charcoal-muted);
+        line-height: 1.5;
+      }
+
+      /* Interactive Menu Controls (#carta) */
+      .carta-hero-banner {
+        background-color: var(--bg-forest-deep);
+        color: var(--cream-canvas);
+        padding: 38px 0 30px;
+        border-bottom: 1px solid var(--gold-muted);
+      }
+
+      .carta-controls-bar {
+        background-color: var(--cream-canvas);
+        border-bottom: 1px solid var(--border-light);
+        padding: 18px 0;
+        position: sticky;
+        top: 68px;
+        z-index: 30;
+      }
+
+      @media (max-width: 768px) {
+        .carta-controls-bar {
+          position: relative;
+          top: auto;
+          padding: 14px 0;
+        }
+      }
+
+      .carta-search-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        margin-bottom: 14px;
+      }
+
+      .search-input-wrap {
+        position: relative;
+        flex: 1;
+        min-width: 240px;
+      }
+
+      .search-input-wrap svg {
+        position: absolute;
+        left: 14px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 18px;
+        height: 18px;
+        color: var(--charcoal-muted);
+        pointer-events: none;
+      }
+
+      .search-input {
+        width: 100%;
+        padding: 11px 38px 11px 42px;
+        border: 1px solid rgba(22, 48, 36, 0.24);
+        border-radius: 8px;
+        background-color: #ffffff;
+        font-size: 0.92rem;
+      }
+
+      .search-input:focus {
+        outline: none;
+        border-color: var(--bg-forest);
+      }
+
+      .search-clear-btn {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 0.8rem;
+        color: var(--charcoal-muted);
+        padding: 4px 6px;
+        display: none;
+      }
+
+      .category-scroll-strip {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px;
+        padding-bottom: 2px;
+      }
+
+      @media (max-width: 768px) {
+        .category-scroll-strip {
+          flex-wrap: nowrap;
+          overflow-x: auto;
+          scrollbar-width: none;
+          -ms-overflow-style: none;
+        }
+        .category-scroll-strip::-webkit-scrollbar {
+          display: none;
+        }
+      }
+
+      .cat-filter-btn {
+        padding: 8px 15px;
+        border-radius: 6px;
+        font-size: 0.83rem;
+        font-weight: 600;
+        white-space: nowrap;
+        flex-shrink: 0;
+        color: var(--charcoal-text);
+        background-color: var(--cream-warm);
+        border: 1px solid transparent;
+        transition: background-color var(--transition-fast), color var(--transition-fast);
+      }
+
+      .cat-filter-btn:hover {
+        border-color: var(--gold-primary);
+      }
+
+      .cat-filter-btn.active {
+        background-color: var(--bg-forest-deep);
+        color: var(--gold-primary);
+        border-color: var(--gold-primary);
+      }
+
+      /* PDF Notes Reference Panel */
+      .pdf-notes-panel {
+        background-color: var(--cream-warm);
+        border: 1px solid var(--border-light);
+        border-radius: 10px;
+        padding: 20px 24px;
+        margin-bottom: 28px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+
+      .pdf-note-col h4 {
+        font-family: var(--font-serif);
+        font-size: 1.15rem;
+        color: var(--bg-forest-deep);
+        margin-bottom: 6px;
+      }
+
+      .pdf-note-col p {
+        font-size: 0.83rem;
+        color: var(--charcoal-muted);
+        line-height: 1.5;
+      }
+
+      @media (max-width: 820px) {
+        .pdf-notes-panel {
+          grid-template-columns: 1fr;
+          gap: 14px;
+          padding: 16px;
+        }
+      }
+
+      /* PDF Original Pages Viewer Grid */
+      .pdf-pages-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+        margin-top: 22px;
+      }
+
+      .pdf-page-thumb {
+        background: #ffffff;
+        border: 1px solid var(--border-light);
+        border-radius: 10px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+      }
+
+      .pdf-page-thumb:hover {
+        transform: translateY(-3px);
+        border-color: var(--gold-primary);
+        box-shadow: 0 10px 24px rgba(15, 34, 25, 0.12);
+      }
+
+      .pdf-page-thumb img {
+        width: 100%;
+        aspect-ratio: 1 / 1.29;
+        object-fit: cover;
+        display: block;
+        background-color: #f9f1e2;
+      }
+
+      .pdf-page-caption {
+        padding: 10px 12px;
+        background-color: var(--bg-forest-deep);
+        color: var(--gold-primary);
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-align: center;
+        border-top: 1px solid var(--gold-muted);
+      }
+
+      @media (max-width: 820px) {
+        .pdf-pages-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 12px;
+        }
+      }
+
+      /* Reviews Grid */
+      .reviews-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+
+      .review-card {
+        background-color: rgba(255, 255, 255, 0.06);
+        border: 1px solid var(--gold-muted);
+        border-radius: 10px;
+        padding: 26px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      .review-stars {
+        color: var(--gold-primary);
+        font-size: 1rem;
+        letter-spacing: 2px;
+      }
+
+      .review-quote {
+        font-size: 0.95rem;
+        color: rgba(248, 246, 240, 0.92);
+        font-style: italic;
+        line-height: 1.6;
+      }
+
+      .review-author {
+        font-size: 0.84rem;
+        color: rgba(248, 246, 240, 0.74);
+      }
+
+      .review-author strong {
+        color: var(--cream-canvas);
+        display: block;
+      }
+
+      @media (max-width: 860px) {
+        .reviews-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Quick Location & Info Grid */
+      .location-split {
+        display: grid;
+        grid-template-columns: 1fr 1.1fr;
+        gap: 32px;
+        align-items: stretch;
+      }
+
+      @media (max-width: 900px) {
+        .location-split {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .info-card-surface {
+        background-color: var(--cream-card);
+        border: 1px solid var(--border-light);
+        border-radius: 12px;
+        padding: 28px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 18px;
+      }
+
+      .map-frame-wrap {
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid var(--border-light);
+        min-height: 360px;
+        background-color: var(--cream-warm);
+      }
+
+      .map-frame-wrap iframe {
+        width: 100%;
+        height: 100%;
+        min-height: 360px;
+        border: 0;
+      }
+
+      /* Story Split (#historia) */
+      .story-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 42px;
+        align-items: center;
+      }
+
+      .story-card-surface {
+        background-color: var(--cream-card);
+        border: 1px solid var(--border-light);
+        border-radius: 12px;
+        padding: 28px;
+      }
+
+      @media (max-width: 860px) {
+        .story-split {
+          grid-template-columns: 1fr;
+          gap: 28px;
+        }
+      }
+
+      /* ==================== VISUAL & INTUITIVE ADMIN PANEL (#admin) ==================== */
+      .admin-lock-wrapper {
+        min-height: 72vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 16px;
+        background-color: var(--bg-forest-deep);
+        color: var(--cream-canvas);
+      }
+
+      .admin-lock-card {
+        width: 100%;
+        max-width: 440px;
+        background-color: var(--bg-forest);
+        border: 1px solid var(--gold-primary);
+        border-radius: 12px;
+        padding: 36px 28px;
+        text-align: center;
+      }
+
+      @keyframes shakeError {
+        0%,
+        100% {
+          transform: translateX(0);
+        }
+        20%,
+        60% {
+          transform: translateX(-8px);
+        }
+        40%,
+        80% {
+          transform: translateX(8px);
+        }
+      }
+
+      .shake {
+        animation: shakeError 0.38s ease-in-out;
+      }
+
+      .admin-dashboard {
+        padding: 36px 0 72px;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        margin-bottom: 14px;
+      }
+
+      .form-label {
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: var(--bg-forest-deep);
+      }
+
+      .form-control {
+        padding: 11px 14px;
+        border: 1px solid rgba(22, 48, 36, 0.25);
+        border-radius: 8px;
+        background-color: #ffffff;
+        font-size: 0.94rem;
+      }
+
+      .form-control:focus {
+        outline: none;
+        border-color: var(--bg-forest);
+      }
+
+      /* Visual File Upload Box (Celular o PC) */
+      .upload-drop-label {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 16px;
+        border: 2px dashed var(--gold-hover);
+        border-radius: 10px;
+        background-color: var(--cream-warm);
+        color: var(--bg-forest-deep);
+        font-weight: 700;
+        font-size: 0.9rem;
+        text-align: center;
+        cursor: pointer;
+        transition: background-color var(--transition-fast);
+      }
+
+      .upload-drop-label:hover {
+        background-color: rgba(217, 160, 78, 0.22);
+      }
+
+      /* Visual Dish Editor Cards Grid in Admin */
+      .admin-cards-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+
+      @media (max-width: 980px) {
+        .admin-cards-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 640px) {
+        .admin-cards-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .admin-dish-card {
+        background-color: #ffffff;
+        border: 1px solid var(--border-light);
+        border-radius: 12px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .admin-dish-photo-wrap {
+        position: relative;
+        aspect-ratio: 16 / 10;
+        background-color: var(--bg-forest);
+        overflow: hidden;
+      }
+
+      .admin-dish-photo-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .admin-photo-upload-btn {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        background-color: var(--bg-forest-deep);
+        color: var(--gold-primary);
+        border: 1px solid var(--gold-primary);
+        padding: 7px 12px;
+        border-radius: 6px;
+        font-size: 0.78rem;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+      }
+
+      .admin-dish-card-body {
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        flex: 1;
+      }
+
+      /* Floating Direct WhatsApp Button */
+      .whatsapp-float {
+        position: fixed;
+        right: 22px;
+        bottom: 24px;
+        z-index: 38;
+        background-color: var(--bg-forest-deep);
+        color: var(--gold-primary);
+        border: 1px solid var(--gold-primary);
+        border-radius: 999px;
+        padding: 11px 18px;
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        font-size: 0.85rem;
+        font-weight: 700;
+        box-shadow: 0 8px 24px rgba(15, 34, 25, 0.3);
+        transition: transform var(--transition-fast), background-color var(--transition-fast);
+      }
+
+      .whatsapp-float:hover {
+        transform: translateY(-2px);
+        background-color: var(--bg-forest);
+      }
+
+      @media (max-width: 768px) {
+        .whatsapp-float {
+          bottom: 66px;
+          right: 14px;
+          width: 44px;
+          height: 44px;
+          padding: 0;
+          justify-content: center;
+          border-radius: 50%;
+        }
+        .whatsapp-float span {
+          display: none;
+        }
+      }
+
+      /* Toast Banner */
+      .toast-banner {
+        position: fixed;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%) translateY(20px);
+        background-color: var(--bg-forest-deep);
+        color: var(--cream-canvas);
+        border: 1px solid var(--gold-primary);
+        padding: 12px 22px;
+        border-radius: 8px;
+        font-size: 0.88rem;
+        font-weight: 600;
+        z-index: 80;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s ease, transform 0.2s ease;
+      }
+
+      .toast-banner.visible {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+
+      /* Footer */
+      .site-footer {
+        background-color: var(--bg-forest-deep);
+        color: rgba(248, 246, 240, 0.82);
+        border-top: 1px solid var(--gold-muted);
+        padding: 52px 0 36px;
+        font-size: 0.88rem;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+        gap: 32px;
+        margin-bottom: 32px;
+      }
+
+      .footer-title {
+        font-family: var(--font-serif);
+        font-size: 1.25rem;
+        color: var(--gold-primary);
+        margin-bottom: 12px;
+        font-weight: 700;
+      }
+
+      .footer-links {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .footer-links a:hover {
+        color: var(--gold-primary);
+      }
+
+      .footer-bottom {
+        padding-top: 24px;
+        border-top: 1px solid rgba(217, 160, 78, 0.18);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        font-size: 0.8rem;
+        color: rgba(248, 246, 240, 0.68);
+      }
+
+      @media (max-width: 820px) {
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 520px) {
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Top Bar Navigation (Strict 3-Zone Contract: Brand with Official Logo — 4 Nav Links — 1 Direct WhatsApp CTA) -->
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="#inicio" class="brand-logo-link" aria-label="El Fogón Parrillada Inicio">
+          <img
+            src="/assets/menu/logo_official_gold.jpg"
+            alt="El Fogón Parrillada Restaurante"
+            class="brand-logo-img"
+          />
+        </a>
+
+        <nav class="desktop-nav" aria-label="Navegación principal">
+          <a href="#inicio" class="nav-link active" data-route="inicio">Inicio</a>
+          <a href="#carta" class="nav-link" data-route="carta">Carta Digital</a>
+          <a href="#historia" class="nav-link" data-route="historia">Historia</a>
+          <a href="#reservas" class="nav-link" data-route="reservas">Ubicación y Reservas</a>
+        </nav>
+
+        <a
+          href="https://wa.me/59899621962"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="header-cta"
+        >
+          WhatsApp Directo
+        </a>
+      </div>
+    </header>
+
+    <!-- Main Dynamic Subpages Container -->
+    <main id="app-main">
+      <!-- ==================== VIEW 1: #inicio ==================== -->
+      <section id="view-inicio" class="page-view active" aria-labelledby="hero-heading">
+        <div class="hero-section">
+          <div class="container">
+            <div class="hero-grid">
+              <div class="hero-content">
+                <p class="hero-kicker">En pleno Centro de Montevideo desde 1962</p>
+                <h1 id="hero-heading" class="hero-title">
+                  Un restaurante con historia: <em>Parrilla, Pastas, Mariscos y Vino</em>.
+                </h1>
+                <p class="hero-lead">
+                  En pleno centro de Montevideo y desde 1962, somos representantes de las mejores
+                  tradiciones de la gastronomía uruguaya. Sean bienvenidos a nuestro restaurante en
+                  San José 1080.
+                </p>
+
+                <div class="hero-actions">
+                  <a href="#carta" class="btn-primary">Ver Carta Completa</a>
+                  <a
+                    href="https://wa.me/59899621962"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-secondary"
+                  >
+                    Reservar por WhatsApp
+                  </a>
+                  <a href="#reservas" class="btn-secondary">Ubicación Rápida</a>
+                </div>
+
+                <!-- Redes Sociales Oficiales y Botón Circular con Logo de Google Maps -->
+                <div class="social-quick-bar" aria-label="Redes sociales y Google Maps">
+                  <a
+                    href="https://www.google.com/maps/place/El+Fog%C3%B3n/@-34.9070622,-56.1928837,17z/data=!3m1!4b1!4m6!3m5!1s0x959f81cd5c70a2b1:0x64a7dbcfe1cafd59!8m2!3d-34.9070622!4d-56.1928837!16s%2Fg%2F1tg36df7?entry=ttu&g_ep=EgoyMDI2MTExMC4wIKXMDSoASAFQAw%3D%3D"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="gmaps-circle-btn"
+                    title="Abrir El Fogón en Google Maps"
+                    aria-label="Ir a Google Maps de El Fogón"
+                  >
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path
+                        d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"
+                        fill="#EA4335"
+                      />
+                      <circle cx="12" cy="9" r="2.8" fill="#FFFFFF" />
+                    </svg>
+                  </a>
+
+                  <a
+                    href="https://www.instagram.com/parrillada.elfogon/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-pill-link"
+                  >
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                    <span>@parrillada.elfogon</span>
+                  </a>
+
+                  <a
+                    href="https://www.google.com/maps/place/El+Fog%C3%B3n/@-34.9070622,-56.1928837,17z/data=!3m1!4b1!4m6!3m5!1s0x959f81cd5c70a2b1:0x64a7dbcfe1cafd59!8m2!3d-34.9070622!4d-56.1928837!16s%2Fg%2F1tg36df7?entry=ttu&g_ep=EgoyMDI2MTExMC4wIKXMDSoASAFQAw%3D%3D"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-pill-link"
+                  >
+                    <span>Google Maps · San José 1080</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Fotografía Real de la Parrilla extraída de Menu.pdf -->
+              <div class="hero-media-card">
+                <img
+                  src="/assets/menu/dish_parrilla_hero.jpg"
+                  alt="Parrilla y brasas de leña de El Fogón en Montevideo"
+                  onerror="window.handleImageFallback(this, 'El Fogón 1962', 'La mejor carne de Uruguay')"
+                />
+                <div class="hero-media-scrim">
+                  <p class="hero-caption-sub">La mejor carne de Uruguay · San José 1080</p>
+                  <p class="hero-caption-title">Parrilla a las Brasas &amp; Cámara Dry Aged</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 4-Column Heritage & Facts Strip -->
+            <div class="kpi-strip">
+              <div class="kpi-item">
+                <span class="kpi-value tabular-nums">Desde 1962</span>
+                <span class="kpi-label">En pleno Centro de Montevideo (San José 1080)</span>
+              </div>
+              <div class="kpi-item">
+                <span class="kpi-value tabular-nums">4.4 ★ (7.023)</span>
+                <span class="kpi-label">Calificación verificada en Google Maps y TripAdvisor</span>
+              </div>
+              <div class="kpi-item">
+                <span class="kpi-value tabular-nums">Dry Aged 30d</span>
+                <span class="kpi-label">Costilla Dry Aged madurada 30 días y Master Baby 700 g</span>
+              </div>
+              <div class="kpi-item">
+                <span class="kpi-value tabular-nums">2900 0900</span>
+                <span class="kpi-label">Abierto todos los días · Cierra a las 12 a.m.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nuestras Especialidades con Fotos Reales del PDF Menu.pdf -->
+        <div class="section-block">
+          <div class="container">
+            <div class="section-header">
+              <div>
+                <p class="section-kicker">Especialidades de la Carta</p>
+                <h2 class="section-title">Nuestras Secciones Tradicionales</h2>
+                <p class="section-subtitle">
+                  Toque cualquier especialidad para ver todos los platos y descripciones oficiales de nuestra carta.
+                </p>
+              </div>
+              <a href="#carta" class="btn-outline-dark">Abrir Carta Completa</a>
+            </div>
+
+            <div class="specialties-grid">
+              <button type="button" class="specialty-card reveal-up" onclick="window.openCartaCategory('parrilla')">
+                <div class="specialty-img-wrap">
+                  <img
+                    src="/assets/menu/dish_parrilla_cortes.jpg"
+                    alt="Parrillas y Vacunos"
+                    onerror="window.handleImageFallback(this, 'Parrillas y Vacunos', 'La mejor carne de Uruguay')"
+                  />
+                </div>
+                <div class="specialty-body">
+                  <span class="specialty-meta">La mejor carne de Uruguay</span>
+                  <h3 class="specialty-name">Parrillas y Vacunos</h3>
+                  <p class="specialty-desc">Parrilla Típica, 5 Carnes, Parrilla Premium, Costilla Dry Aged y Master Baby 700 g.</p>
+                </div>
+              </button>
+
+              <button type="button" class="specialty-card reveal-up" onclick="window.openCartaCategory('pollos-porcinos')">
+                <div class="specialty-img-wrap">
+                  <img
+                    src="/assets/menu/dish_french_rack.jpg"
+                    alt="Pollos, Porcinos y Ovinos"
+                    onerror="window.handleImageFallback(this, 'Pollos, Porcinos y Ovinos', 'Especialidades a las brasas')"
+                  />
+                </div>
+                <div class="specialty-body">
+                  <span class="specialty-meta">Especiales a las Brasas</span>
+                  <h3 class="specialty-name">Pollos, Porcinos y Ovinos</h3>
+                  <p class="specialty-desc">French rack, Lechón a la parrilla, Matambrito de cerdo y Pollo relleno.</p>
+                </div>
+              </button>
+
+              <button type="button" class="specialty-card reveal-up" onclick="window.openCartaCategory('pastas')">
+                <div class="specialty-img-wrap">
+                  <img
+                    src="/assets/menu/dish_raviolones.jpg"
+                    alt="Pastas Caseras — Raviolones de salmón con salsa de mariscos"
+                    onerror="window.handleImageFallback(this, 'Pastas Caseras', 'Raviolones de salmón')"
+                  />
+                </div>
+                <div class="specialty-body">
+                  <span class="specialty-meta">Recomendado</span>
+                  <h3 class="specialty-name">Pastas Caseras</h3>
+                  <p class="specialty-desc">Raviolones de salmón con salsa de mariscos, Sorrentinos, Lasagna, Ñoquis y Tallarines.</p>
+                </div>
+              </button>
+
+              <button type="button" class="specialty-card reveal-up" onclick="window.openCartaCategory('mariscos')">
+                <div class="specialty-img-wrap">
+                  <img
+                    src="/assets/menu/dish_paella.jpg"
+                    alt="Pescados y Mariscos — Paella valenciana especial para dos"
+                    onerror="window.handleImageFallback(this, 'Pescados y Mariscos', 'Paella valenciana')"
+                  />
+                </div>
+                <div class="specialty-body">
+                  <span class="specialty-meta">Recomendado</span>
+                  <h3 class="specialty-name">Pescados y Mariscos</h3>
+                  <p class="specialty-desc">Paella para dos con pulpo y langostinos, Pulpo a la gallega y Pescado de la casa.</p>
+                </div>
+              </button>
+
+              <button type="button" class="specialty-card reveal-up" onclick="window.openCartaCategory('postres')">
+                <div class="specialty-img-wrap">
+                  <img
+                    src="/assets/menu/dish_flan.jpg"
+                    alt="Postres Caseros de El Fogón"
+                    onerror="window.handleImageFallback(this, 'Postres Caseros', 'Flan, Isla Flotante y Tiramisú')"
+                  />
+                </div>
+                <div class="specialty-body">
+                  <span class="specialty-meta">Recetas Clásicas</span>
+                  <h3 class="specialty-name">Postres y Bebidas</h3>
+                  <p class="specialty-desc">Flan casero, Isla flotante con sambayón, Crème Brûlée, Tiramisú y Vinos Selección Fogón.</p>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Platos Recomendados de la Carta PDF -->
+        <div class="section-block bg-warm">
+          <div class="container">
+            <div class="section-header">
+              <div>
+                <p class="section-kicker">Recomendados de la Carta</p>
+                <h2 class="section-title">Platos Destacados de El Fogón</h2>
+                <p class="section-subtitle">
+                  Fotografías y descripciones reales de nuestra carta oficial en San José 1080.
+                </p>
+              </div>
+              <a href="#carta" class="btn-primary">Ver Toda la Carta (<span id="home-total-dishes-count">84</span>)</a>
+            </div>
+
+            <div id="home-featured-dishes" class="dishes-grid"></div>
+          </div>
+        </div>
+
+        <!-- Sección de Comentarios de 5 Estrellas Reales + Botón Directo a Google Maps (CERO Promos) -->
+        <div class="section-block bg-forest-dark">
+          <div class="container">
+            <div class="section-header">
+              <div>
+                <p class="section-kicker">Opiniones Reales de Clientes · 4.4 ★ (7.023 reseñas)</p>
+                <h2 class="section-title">Comentarios de 5 Estrellas</h2>
+                <p class="section-subtitle">
+                  Agradecemos a quienes nos visitan día a día y comparten su experiencia en nuestro salón.
+                </p>
+              </div>
+              <a
+                href="https://www.google.com/maps/place/El+Fog%C3%B3n/@-34.9070622,-56.1928837,17z/data=!3m1!4b1!4m6!3m5!1s0x959f81cd5c70a2b1:0x64a7dbcfe1cafd59!8m2!3d-34.9070622!4d-56.1928837!16s%2Fg%2F1tg36df7?entry=ttu&g_ep=EgoyMDI2MTExMC4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-primary"
+              >
+                Dejar un comentario en Google Maps
+              </a>
+            </div>
+
+            <div class="reviews-grid">
+              <article class="review-card reveal-up">
+                <div>
+                  <div class="review-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+                  <p class="review-quote" style="margin-top: 12px;">
+                    “¡Por fin una parrillada donde la carne es tierna! Baby beef y tira de asado fue lo que comimos. Buen servicio y ambiente cálido. Lo recomiendo.”
+                  </p>
+                </div>
+                <div class="review-author">
+                  <strong>Nina Da Silva</strong>
+                  <span>Calificación 5 Estrellas · Cliente de El Fogón</span>
+                </div>
+              </article>
+
+              <article class="review-card reveal-up">
+                <div>
+                  <div class="review-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+                  <p class="review-quote" style="margin-top: 12px;">
+                    “Al entrar vimos una agradable y cálida ambientación del local. Solicitamos el menú ejecutivo y superó las expectativas. La milanesa napolitana de pollo con guarnición estaba exquisita. La colita de cuadril a las brasas con ensalada mixta insuperable. De postre comimos tarta de manzana con helado, y un Martín Fierro delicioso. Para rematar un café de lujo. Disfrutamos totalmente de la comida, de calidad y servida de la mejor manera.”
+                  </p>
+                </div>
+                <div class="review-author">
+                  <strong>Silvia González</strong>
+                  <span>Calificación 5 Estrellas · Cliente de El Fogón</span>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ubicación Rápida e Información en la Página Principal -->
+        <div class="section-block">
+          <div class="container">
+            <div class="section-header">
+              <div>
+                <p class="section-kicker">San José 1080 · Centro de Montevideo</p>
+                <h2 class="section-title">Ubicación Rápida e Información</h2>
+              </div>
+              <a
+                href="https://www.google.com/maps/place/El+Fog%C3%B3n/@-34.9070622,-56.1928837,17z/data=!3m1!4b1!4m6!3m5!1s0x959f81cd5c70a2b1:0x64a7dbcfe1cafd59!8m2!3d-34.9070622!4d-56.1928837!16s%2Fg%2F1tg36df7?entry=ttu&g_ep=EgoyMDI2MTExMC4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-outline-dark"
+              >
+                Abrir en Google Maps
+              </a>
+            </div>
+
+            <div class="location-split">
+              <div class="info-card-surface">
+                <div style="display: flex; flex-direction: column; gap: 14px;">
+                  <div>
+                    <strong style="color: var(--bg-forest-deep); font-size: 1.05rem;">Dirección Oficial:</strong>
+                    <p style="color: var(--charcoal-muted);">EL FOGÓN CENTRO · San José 1080, 11100 Montevideo, Departamento de Montevideo</p>
+                  </div>
+                  <div>
+                    <strong style="color: var(--bg-forest-deep); font-size: 1.05rem;">Horario:</strong>
+                    <p style="color: var(--charcoal-muted);">Abierto todos los días · Cierra a las 12:00 a.m. (medianoche)</p>
+                  </div>
+                  <div>
+                    <strong style="color: var(--bg-forest-deep); font-size: 1.05rem;">Teléfono:</strong>
+                    <p style="color: var(--charcoal-muted);" class="tabular-nums">2900 0900</p>
+                  </div>
+                  <div>
+                    <strong style="color: var(--bg-forest-deep); font-size: 1.05rem;">Servicios e Información:</strong>
+                    <p style="color: var(--charcoal-muted);">Consumo en el lugar · Para llevar · Entrega sin contacto · Entrada accesible · $800–2.000 por persona</p>
+                  </div>
+                </div>
+
+                <div style="display: flex; flex-wrap: wrap; gap: 12px; padding-top: 10px; border-top: 1px solid var(--border-light);">
+                  <a
+                    href="https://wa.me/59899621962"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-primary"
+                  >
+                    Reservar por WhatsApp Directo
+                  </a>
+                  <a
+                    href="https://www.google.com/maps/place/El+Fog%C3%B3n/@-34.9070622,-56.1928837,17z/data=!3m1!4b1!4m6!3m5!1s0x959f81cd5c70a2b1:0x64a7dbcfe1cafd59!8m2!3d-34.9070622!4d-56.1928837!16s%2Fg%2F1tg36df7?entry=ttu&g_ep=EgoyMDI2MTExMC4wIKXMDSoASAFQAw%3D%3D"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-outline-dark"
+                  >
+                    Cómo Llegar (Google Maps)
+                  </a>
+                </div>
+              </div>
+
+              <div class="map-frame-wrap">
+                <iframe
+                  title="Mapa de Google Maps de El Fogón en San José 1080, Montevideo"
+                  src="https://www.google.com/maps?q=El+Fog%C3%B3n,+San+Jos%C3%A9+1080,+Montevideo,+Uruguay&amp;hl=es&amp;z=17&amp;output=embed"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW 2: #carta ==================== -->
+      <section id="view-carta" class="page-view" aria-labelledby="carta-heading">
+        <div class="carta-hero-banner">
+          <div class="container">
+            <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px;">
+              <div>
+                <p class="hero-kicker" style="margin-bottom: 6px;">Carta Oficial · San José 1080</p>
+                <h1 id="carta-heading" class="section-title" style="color: var(--cream-canvas);">
+                  Carta Digital Completa
+                </h1>
+                <p style="font-size: 0.94rem; color: rgba(248, 246, 240, 0.84); margin-top: 6px; max-width: 65ch;">
+                  Consulte todos los platos, categorías, guarniciones, salsas y precios de El Fogón. Para reservar mesa, contáctenos directamente por WhatsApp.
+                </p>
+              </div>
+              <div>
+                <a
+                  href="https://wa.me/59899621962"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-primary"
+                >
+                  Reservar por WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Buscador en Tiempo Real y Filtros por Categoría -->
+        <div class="carta-controls-bar">
+          <div class="container">
+            <div class="carta-search-row">
+              <div class="search-input-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input
+                  type="search"
+                  id="menu-search-input"
+                  class="search-input"
+                  placeholder="Buscar plato o ingrediente (ej: Picada, Provolone, Dry Aged, Paella, Raviolones, Flan)..."
+                  aria-label="Buscar platos en la carta"
+                />
+                <button
+                  type="button"
+                  id="menu-search-clear"
+                  class="search-clear-btn"
+                  aria-label="Limpiar búsqueda"
+                >
+                  Limpiar
+                </button>
+              </div>
+              <div style="font-size: 0.85rem; color: var(--charcoal-muted);" class="tabular-nums">
+                Mostrando <strong id="menu-filtered-count" style="color: var(--bg-forest-deep);">0</strong> platos de la carta
+              </div>
+            </div>
+
+            <div class="category-scroll-strip" role="tablist" aria-label="Categorías de la carta" id="category-tabs-container">
+              <button type="button" class="cat-filter-btn active" data-category="todas" role="tab" aria-selected="true">
+                Toda la Carta
+              </button>
+              <button type="button" class="cat-filter-btn" data-category="entradas" role="tab" aria-selected="false">
+                Entradas
+              </button>
+              <button type="button" class="cat-filter-btn" data-category="parrilla" role="tab" aria-selected="false">
+                Parrillas y Vacunos
+              </button>
+              <button type="button" class="cat-filter-btn" data-category="pollos-porcinos" role="tab" aria-selected="false">
+                Pollos, Porcinos y Ovinos
+              </button>
+              <button type="button" class="cat-filter-btn" data-category="mariscos" role="tab" aria-selected="false">
+                Pescados y Mariscos
+              </button>
+              <button type="button" class="cat-filter-btn" data-category="pastas" role="tab" aria-selected="false">
+                Pastas Caseras
+              </button>
+              <button type="button" class="cat-filter-btn" data-category="milanesas" role="tab" aria-selected="false">
+                Milanesas
+              </button>
+              <button type="button" class="cat-filter-btn" data-category="acompanamientos" role="tab" aria-selected="false">
+                Acompañamientos y Sugerencias
+              </button>
+              <button type="button" class="cat-filter-btn" data-category="ensaladas" role="tab" aria-selected="false">
+                Ensaladas y Sin Sal
+              </button>
+              <button type="button" class="cat-filter-btn" data-category="postres" role="tab" aria-selected="false">
+                Postres Caseros
+              </button>
+              <button type="button" class="cat-filter-btn" data-category="bebidas" role="tab" aria-selected="false">
+                Bebidas y Vinos
+              </button>
+              <button type="button" class="cat-filter-btn" data-category="turistico" role="tab" aria-selected="false">
+                Menú Turístico
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-block" style="padding-top: 28px;">
+          <div class="container">
+            <!-- Grid Dinámico de Platos (Solo visual: Foto, Nombre, Descripción y Precio) -->
+            <div id="carta-dishes-grid" class="dishes-grid" aria-live="polite"></div>
+
+            <!-- Estado Vacío de Búsqueda -->
+            <div
+              id="carta-empty-state"
+              style="
+                display: none;
+                text-align: center;
+                padding: 48px 20px;
+                background: #ffffff;
+                border: 1px solid var(--border-light);
+                border-radius: 10px;
+              "
+            >
+              <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--bg-forest-deep); margin-bottom: 8px;">
+                No encontramos platos con ese nombre
+              </h3>
+              <p style="font-size: 0.92rem; color: var(--charcoal-muted); margin-bottom: 18px;">
+                Pruebe con otra palabra o toque el botón para volver a ver todos los platos.
+              </p>
+              <button type="button" class="btn-primary" onclick="window.resetCartaFilters()">
+                Ver Toda la Carta
+              </button>
+            </div>
+
+            <!-- Visor de las Páginas Originales de la Carta PDF (Menu.pdf) -->
+            <div style="margin-top: 56px; padding-top: 36px; border-top: 1px solid var(--border-light);">
+              <div class="section-header" style="margin-bottom: 16px;">
+                <div>
+                  <p class="section-kicker">Carta Impresa Oficial (Menu.pdf)</p>
+                  <h2 class="section-title">Páginas Originales de Nuestra Carta</h2>
+                  <p class="section-subtitle">
+                    Toque cualquier página para ampliarla y leer nuestra carta física completa.
+                  </p>
+                </div>
+              </div>
+              <div class="pdf-pages-grid">
+                <a href="/assets/menu/page_01.jpg" target="_blank" rel="noopener noreferrer" class="pdf-page-thumb">
+                  <img src="/assets/menu/page_01.jpg" alt="Portada Carta El Fogón" loading="lazy" />
+                  <span class="pdf-page-caption">Portada Oficial</span>
+                </a>
+                <a href="/assets/menu/page_03.jpg" target="_blank" rel="noopener noreferrer" class="pdf-page-thumb">
+                  <img src="/assets/menu/page_03.jpg" alt="Página 3 Carta — Entradas" loading="lazy" />
+                  <span class="pdf-page-caption">Pág. 3 · Entradas</span>
+                </a>
+                <a href="/assets/menu/page_04.jpg" target="_blank" rel="noopener noreferrer" class="pdf-page-thumb">
+                  <img src="/assets/menu/page_04.jpg" alt="Página 4 Carta — Pollos, Porcinos y Ovinos" loading="lazy" />
+                  <span class="pdf-page-caption">Pág. 4 · Pollos y Porcinos</span>
+                </a>
+                <a href="/assets/menu/page_05.jpg" target="_blank" rel="noopener noreferrer" class="pdf-page-thumb">
+                  <img src="/assets/menu/page_05.jpg" alt="Página 5 Carta — Parrillas y Vacunos" loading="lazy" />
+                  <span class="pdf-page-caption">Pág. 5 · Parrillas y Vacunos</span>
+                </a>
+                <a href="/assets/menu/page_06.jpg" target="_blank" rel="noopener noreferrer" class="pdf-page-thumb">
+                  <img src="/assets/menu/page_06.jpg" alt="Página 6 Carta — Pescados y Mariscos" loading="lazy" />
+                  <span class="pdf-page-caption">Pág. 6 · Pescados y Mariscos</span>
+                </a>
+                <a href="/assets/menu/page_07.jpg" target="_blank" rel="noopener noreferrer" class="pdf-page-thumb">
+                  <img src="/assets/menu/page_07.jpg" alt="Página 7 Carta — Pastas Caseras" loading="lazy" />
+                  <span class="pdf-page-caption">Pág. 7 · Pastas Caseras</span>
+                </a>
+                <a href="/assets/menu/page_08.jpg" target="_blank" rel="noopener noreferrer" class="pdf-page-thumb">
+                  <img src="/assets/menu/page_08.jpg" alt="Página 8 Carta — Milanesas y Acompañamientos" loading="lazy" />
+                  <span class="pdf-page-caption">Pág. 8 · Milanesas</span>
+                </a>
+                <a href="/assets/menu/page_09.jpg" target="_blank" rel="noopener noreferrer" class="pdf-page-thumb">
+                  <img src="/assets/menu/page_09.jpg" alt="Página 9 Carta — Sugerencias y Recomendados Sin Sal" loading="lazy" />
+                  <span class="pdf-page-caption">Pág. 9 · Sin Sal y Sugerencias</span>
+                </a>
+                <a href="/assets/menu/page_10.jpg" target="_blank" rel="noopener noreferrer" class="pdf-page-thumb">
+                  <img src="/assets/menu/page_10.jpg" alt="Página 10 Carta — Ensaladas" loading="lazy" />
+                  <span class="pdf-page-caption">Pág. 10 · Ensaladas</span>
+                </a>
+                <a href="/assets/menu/page_11.jpg" target="_blank" rel="noopener noreferrer" class="pdf-page-thumb">
+                  <img src="/assets/menu/page_11.jpg" alt="Página 11 Carta — Bebidas" loading="lazy" />
+                  <span class="pdf-page-caption">Pág. 11 · Bebidas y Vinos</span>
+                </a>
+                <a href="/assets/menu/page_13.jpg" target="_blank" rel="noopener noreferrer" class="pdf-page-thumb">
+                  <img src="/assets/menu/page_13.jpg" alt="Página 13 Carta — Postres Caseros" loading="lazy" />
+                  <span class="pdf-page-caption">Pág. 13 · Postres Caseros</span>
+                </a>
+                <a href="/assets/menu/page_14.jpg" target="_blank" rel="noopener noreferrer" class="pdf-page-thumb">
+                  <img src="/assets/menu/page_14.jpg" alt="Página 14 Carta — Menú Turístico" loading="lazy" />
+                  <span class="pdf-page-caption">Pág. 14 · Menú Turístico</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW 3: #historia (Sin reunión empresarial ni salón exclusivo) ==================== -->
+      <section id="view-historia" class="page-view" aria-labelledby="historia-heading">
+        <div class="carta-hero-banner">
+          <div class="container">
+            <p class="hero-kicker" style="margin-bottom: 6px;">En Pleno Centro de Montevideo desde 1962</p>
+            <h1 id="historia-heading" class="section-title" style="color: var(--cream-canvas);">
+              Un Restaurante con Historia
+            </h1>
+            <p style="font-size: 0.96rem; color: rgba(248, 246, 240, 0.84); margin-top: 8px; max-width: 65ch;">
+              En pleno centro de Montevideo y desde 1962, somos representantes de las mejores tradiciones de la gastronomía uruguaya. Sean bienvenidos a nuestro restaurante.
+            </p>
+          </div>
+        </div>
+
+        <div class="section-block">
+          <div class="container">
+            <div class="story-split">
+              <div>
+                <p class="section-kicker">Desde 1962 · San José 1080</p>
+                <h2 class="section-title" style="margin-bottom: 16px;">
+                  Tradición gastronómica uruguaya en el corazón de Montevideo
+                </h2>
+                <p style="margin-bottom: 14px; color: var(--charcoal-muted);">
+                  Fundado en 1962 en San José 1080, <strong>El Fogón Parrillada</strong> es un punto gastronómico ineludible en el Centro de Montevideo para disfrutar de la clásica parrilla uruguaya a las brasas, pastas caseras, pescados, mariscos y una cuidada selección de vinos.
+                </p>
+                <p style="margin-bottom: 20px; color: var(--charcoal-muted);">
+                  Nuestra propuesta combina la calidez de nuestro salón tradicional con el oficio de nuestros parrilleros y mozos, manteniendo intacta la calidad que nos distingue desde hace más de seis décadas.
+                </p>
+                <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+                  <a href="#carta" class="btn-primary">Ver Nuestra Carta</a>
+                  <a
+                    href="https://wa.me/59899621962"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-outline-dark"
+                  >
+                    Reservar por WhatsApp
+                  </a>
+                </div>
+              </div>
+
+              <div class="story-card-surface">
+                <img
+                  src="/assets/menu/page_01.jpg"
+                  alt="Ilustración histórica de Montevideo en la portada de El Fogón"
+                  style="border-radius: 8px; aspect-ratio: 4/3; object-fit: cover; object-position: center bottom; margin-bottom: 16px;"
+                  referrerpolicy="no-referrer"
+                />
+                <h3 style="font-family: var(--font-serif); font-size: 1.4rem; color: var(--bg-forest-deep); margin-bottom: 6px;">
+                  San José 1080 · Montevideo, Uruguay
+                </h3>
+                <p style="font-size: 0.88rem; color: var(--charcoal-muted);">
+                  Parrilla · Pastas · Mariscos · Vino. Un clásico montevideano abierto todos los días al mediodía y a la noche.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experiencia Dry Aged con Foto Real del PDF -->
+        <div class="section-block bg-forest-dark">
+          <div class="container">
+            <div class="story-split">
+              <div class="story-card-surface" style="background-color: var(--bg-forest-deep); border-color: var(--gold-muted);">
+                <img
+                  src="/assets/menu/dish_dry_ager.jpg"
+                  alt="Cámara Dry Ager y cortes a las brasas en El Fogón"
+                  style="border-radius: 8px; aspect-ratio: 4/3; object-fit: cover; margin-bottom: 16px;"
+                />
+                <strong style="font-family: var(--font-serif); font-size: 1.35rem; color: var(--gold-primary); display: block;">
+                  Costilla Dry Aged (Madurada 30 días) &amp; Master Baby 700 g
+                </strong>
+              </div>
+
+              <div>
+                <p class="section-kicker">Especialidad en Carnes</p>
+                <h2 class="section-title" style="margin-bottom: 16px; color: var(--cream-canvas);">
+                  Experiencia Dry Aged y Cortes Seleccionados
+                </h2>
+                <p style="margin-bottom: 18px; color: rgba(248, 246, 240, 0.86);">
+                  En nuestra cámara <strong>DRY AGER</strong> maduramos cortes seleccionados durante 30 días para lograr una terneza y concentración de sabor excepcionales, asados al punto de su preferencia (jugoso, a punto o bien asado).
+                </p>
+                <button type="button" class="btn-primary" onclick="window.openCartaCategory('parrilla')">
+                  Ver Cortes de Parrilla en la Carta
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW 4: #reservas (Ubicación Rápida, Info, Google Maps Funcional y WhatsApp Directo) ==================== -->
+      <section id="view-reservas" class="page-view" aria-labelledby="reservas-heading">
+        <div class="carta-hero-banner">
+          <div class="container">
+            <p class="hero-kicker" style="margin-bottom: 6px;">Contacto Directo · San José 1080</p>
+            <h1 id="reservas-heading" class="section-title" style="color: var(--cream-canvas);">
+              Ubicación Rápida, Información y Reservas
+            </h1>
+            <p style="font-size: 0.95rem; color: rgba(248, 246, 240, 0.84); margin-top: 6px; max-width: 65ch;">
+              Comuníquese directamente a nuestro WhatsApp sin mensajes automáticos o consulte cómo llegar en Google Maps.
+            </p>
+          </div>
+        </div>
+
+        <div class="section-block">
+          <div class="container">
+            <div class="location-split">
+              <!-- Tarjeta de Contacto Directo, Info y Redes -->
+              <div class="info-card-surface">
+                <div>
+                  <p class="section-kicker">Atención Directa</p>
+                  <h2 style="font-family: var(--font-serif); font-size: 1.9rem; color: var(--bg-forest-deep); margin-bottom: 10px;">
+                    El Fogón Parrillada — Centro
+                  </h2>
+                  <p style="font-size: 0.92rem; color: var(--charcoal-muted); margin-bottom: 20px;">
+                    Haga clic en el botón de WhatsApp para hablar directamente con nosotros o llámenos al teléfono del salón.
+                  </p>
+
+                  <div style="display: flex; flex-direction: column; gap: 14px; font-size: 0.92rem; margin-bottom: 24px;">
+                    <div style="padding: 12px 14px; background: var(--cream-warm); border-radius: 8px;">
+                      <strong style="color: var(--bg-forest-deep); display: block;">📍 Ubicación Rápida:</strong>
+                      <span>EL FOGÓN CENTRO · San José 1080, 11100 Montevideo, Departamento de Montevideo</span>
+                    </div>
+                    <div style="padding: 12px 14px; background: var(--cream-warm); border-radius: 8px;">
+                      <strong style="color: var(--bg-forest-deep); display: block;">🕒 Horario de Atención:</strong>
+                      <span>Abierto todos los días · Cierra a las 12:00 a.m.</span>
+                    </div>
+                    <div style="padding: 12px 14px; background: var(--cream-warm); border-radius: 8px;">
+                      <strong style="color: var(--bg-forest-deep); display: block;">📞 Teléfono Fijo:</strong>
+                      <span class="tabular-nums">2900 0900</span>
+                    </div>
+                    <div style="padding: 12px 14px; background: var(--cream-warm); border-radius: 8px;">
+                      <strong style="color: var(--bg-forest-deep); display: block;">✓ Información del Local:</strong>
+                      <span>Consumo en el lugar · Para llevar · Entrega sin contacto · Accesible · $800–2.000 por persona</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                  <a
+                    href="https://wa.me/59899621962"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-primary"
+                    style="width: 100%; padding: 15px; font-size: 1rem;"
+                  >
+                    Ir a WhatsApp Directo (Reservas y Consultas)
+                  </a>
+
+                  <a
+                    href="https://www.google.com/maps/place/El+Fog%C3%B3n/@-34.9070622,-56.1928837,17z/data=!3m1!4b1!4m6!3m5!1s0x959f81cd5c70a2b1:0x64a7dbcfe1cafd59!8m2!3d-34.9070622!4d-56.1928837!16s%2Fg%2F1tg36df7?entry=ttu&g_ep=EgoyMDI2MTExMC4wIKXMDSoASAFQAw%3D%3D"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-outline-dark"
+                    style="width: 100%; padding: 13px; text-align: center;"
+                  >
+                    Abrir Ubicación Exacta en Google Maps
+                  </a>
+                </div>
+              </div>
+
+              <!-- Mapa de Google Maps Funcional Embebido -->
+              <div style="display: flex; flex-direction: column; gap: 16px;">
+                <div class="map-frame-wrap" style="flex: 1;">
+                  <iframe
+                    title="Google Maps El Fogón San José 1080 Montevideo"
+                    src="https://www.google.com/maps?q=El+Fog%C3%B3n,+San+Jos%C3%A9+1080,+Montevideo,+Uruguay&amp;hl=es&amp;z=17&amp;output=embed"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                </div>
+                <div
+                  style="
+                    padding: 16px 20px;
+                    background: #ffffff;
+                    border: 1px solid var(--border-light);
+                    border-radius: 10px;
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 12px;
+                  "
+                >
+                  <div>
+                    <strong style="color: var(--bg-forest-deep); display: block;">El Fogón — San José 1080</strong>
+                    <span style="font-size: 0.84rem; color: var(--charcoal-muted);">Código Plus: 3RV4+5R Montevideo</span>
+                  </div>
+                  <a
+                    href="https://www.google.com/maps/place/El+Fog%C3%B3n/@-34.9070622,-56.1928837,17z/data=!3m1!4b1!4m6!3m5!1s0x959f81cd5c70a2b1:0x64a7dbcfe1cafd59!8m2!3d-34.9070622!4d-56.1928837!16s%2Fg%2F1tg36df7?entry=ttu&g_ep=EgoyMDI2MTExMC4wIKXMDSoASAFQAw%3D%3D"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-primary"
+                    style="padding: 9px 16px; font-size: 0.85rem;"
+                  >
+                    Ver en Google Maps
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW 5: #admin (PANEL VISUAL FÁCIL PARA EL DUEÑO) ==================== -->
+      <section id="view-admin" class="page-view" aria-labelledby="admin-heading">
+        <!-- Pantalla de Bloqueo con Contraseña -->
+        <div id="admin-lock-screen" class="admin-lock-wrapper">
+          <div id="admin-lock-card" class="admin-lock-card">
+            <img
+              src="/assets/menu/logo_official_gold.jpg"
+              alt="El Fogón Parrillada Restaurante"
+              style="height: 60px; width: auto; border-radius: 8px; margin: 0 auto 16px;"
+            />
+            <h1 id="admin-heading" style="font-family: var(--font-serif); font-size: 2rem; color: var(--cream-canvas); margin-bottom: 8px;">
+              Acceso de Administrador
+            </h1>
+            <p style="font-size: 0.9rem; color: rgba(248, 246, 240, 0.8); margin-bottom: 22px;">
+              Escriba su contraseña para cambiar precios, subir fotos desde su celular o PC y administrar el Código QR.
+            </p>
+
+            <form id="admin-login-form" novalidate>
+              <div class="form-group" style="text-align: left;">
+                <label for="admin-password-input" class="form-label" style="color: var(--gold-primary);">
+                  Contraseña
+                </label>
+                <input
+                  type="password"
+                  id="admin-password-input"
+                  class="form-control"
+                  style="color: var(--charcoal-text);"
+                  placeholder="Escriba la contraseña aquí..."
+                  autocomplete="off"
+                  required
+                />
+              </div>
+
+              <p
+                id="admin-login-error"
+                role="alert"
+                style="display: none; color: #fca5a5; font-size: 0.85rem; font-weight: 600; margin-bottom: 14px;"
+              >
+                Contraseña incorrecta. Intente nuevamente.
+              </p>
+
+              <div style="display: flex; gap: 10px; margin-top: 16px;">
+                <button type="submit" class="btn-primary" style="flex: 1;">
+                  Entrar al Panel
+                </button>
+                <a href="#inicio" class="btn-secondary">Volver al Inicio</a>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Panel Desbloqueado Visual e Intuitivo -->
+        <div id="admin-unlocked-panel" class="admin-dashboard" style="display: none;">
+          <div class="container">
+            <!-- Cabecera Fácil del Admin -->
+            <div
+              style="
+                background-color: var(--bg-forest-deep);
+                color: var(--cream-canvas);
+                padding: 26px;
+                border-radius: 12px;
+                border: 1px solid var(--gold-primary);
+                margin-bottom: 28px;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-between;
+                gap: 16px;
+              "
+            >
+              <div>
+                <p class="hero-kicker" style="margin-bottom: 4px;">Panel Fácil de Administración</p>
+                <h2 style="font-family: var(--font-serif); font-size: 1.95rem; color: var(--cream-canvas);">
+                  Administrar Carta y Código QR — El Fogón
+                </h2>
+                <p style="font-size: 0.9rem; color: rgba(248, 246, 240, 0.84);">
+                  Todo lo que cambie aquí se guarda solo al instante. Puede subir fotos directamente desde su celular o computadora.
+                </p>
+              </div>
+
+              <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                <button type="button" class="btn-primary" onclick="window.saveAndReturnToCarta()">
+                  ✓ Guardar y Ver Carta Pública
+                </button>
+                <button type="button" class="btn-secondary" onclick="window.restoreOriginalMenu()">
+                  Restaurar Carta Original del PDF
+                </button>
+                <button type="button" class="btn-secondary" onclick="window.lockAdminSession()">
+                  Salir del Panel
+                </button>
+              </div>
+            </div>
+
+            <!-- SECCIÓN 1 DEL ADMIN: AGREGAR PLATO NUEVO Y GESTIONAR EL CÓDIGO QR -->
+            <div class="location-split" style="margin-bottom: 32px;">
+              <!-- Paso 1: Agregar Nuevo Plato subiendo foto desde Celular o PC -->
+              <div class="info-card-surface">
+                <div>
+                  <p class="section-kicker">1. Nuevo Plato</p>
+                  <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--bg-forest-deep); margin-bottom: 6px;">
+                    Agregar un Plato a la Carta
+                  </h3>
+                  <p style="font-size: 0.86rem; color: var(--charcoal-muted); margin-bottom: 16px;">
+                    Complete el nombre, elija la categoría, el precio y suba una foto desde su galería o computadora.
+                  </p>
+
+                  <form id="admin-add-dish-form" novalidate>
+                    <div class="form-group">
+                      <label for="new-dish-name" class="form-label">Nombre del Plato *</label>
+                      <input
+                        type="text"
+                        id="new-dish-name"
+                        class="form-control"
+                        placeholder="Ej: Bife Ancho Especial"
+                        required
+                      />
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                      <div class="form-group">
+                        <label for="new-dish-category" class="form-label">Categoría *</label>
+                        <select id="new-dish-category" class="form-control" required>
+                          <option value="entradas">Entradas</option>
+                          <option value="parrilla">Parrillas y Vacunos</option>
+                          <option value="pollos-porcinos">Pollos, Porcinos y Ovinos</option>
+                          <option value="mariscos">Pescados y Mariscos</option>
+                          <option value="pastas">Pastas Caseras</option>
+                          <option value="milanesas">Milanesas</option>
+                          <option value="acompanamientos">Acompañamientos y Sugerencias</option>
+                          <option value="ensaladas">Ensaladas y Sin Sal</option>
+                          <option value="postres">Postres Caseros</option>
+                          <option value="bebidas">Bebidas y Vinos</option>
+                          <option value="turistico">Menú Turístico</option>
+                        </select>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="new-dish-price" class="form-label">Precio en Pesos ($) *</label>
+                        <input
+                          type="number"
+                          id="new-dish-price"
+                          class="form-control"
+                          placeholder="Ej: 990"
+                          min="0"
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="new-dish-desc" class="form-label">Descripción o Ingredientes</label>
+                      <input
+                        type="text"
+                        id="new-dish-desc"
+                        class="form-control"
+                        placeholder="Ej: Con papas fritas y ensalada"
+                      />
+                    </div>
+
+                    <div class="form-group">
+                      <span class="form-label">Foto del Plato (Desde su Celular o Computadora)</span>
+                      <label for="new-dish-file" class="upload-drop-label">
+                        <span>📷 Toque aquí para elegir una foto de su Celular o PC</span>
+                        <small id="new-dish-file-status" style="font-weight: 500; color: var(--charcoal-muted);">
+                          Si no sube una foto, se usará la foto oficial de El Fogón
+                        </small>
+                      </label>
+                      <input
+                        type="file"
+                        id="new-dish-file"
+                        accept="image/*"
+                        style="display: none;"
+                      />
+                      <img
+                        id="new-dish-preview"
+                        alt="Vista previa de la foto subida"
+                        style="display: none; width: 140px; height: 105px; object-fit: cover; border-radius: 8px; margin-top: 8px; border: 2px solid var(--gold-primary);"
+                      />
+                    </div>
+
+                    <button type="submit" class="btn-primary" style="width: 100%; padding: 14px;">
+                      + Guardar y Agregar Plato a la Carta
+                    </button>
+                  </form>
+                </div>
+              </div>
+
+              <!-- Paso 2: Administrar y Cambiar el Código QR desde el Menú de Admin -->
+              <div class="info-card-surface">
+                <div>
+                  <p class="section-kicker">2. Código QR de las Mesas</p>
+                  <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--bg-forest-deep); margin-bottom: 6px;">
+                    Configurar o Cambiar Código QR
+                  </h3>
+                  <p style="font-size: 0.86rem; color: var(--charcoal-muted); margin-bottom: 14px;">
+                    Desde aquí puede cambiar el enlace al que apunta el código QR o subir una imagen de código QR propia desde su celular o PC para imprimirla.
+                  </p>
+
+                  <div
+                    style="
+                      background: var(--bg-forest-deep);
+                      padding: 20px;
+                      border-radius: 10px;
+                      text-align: center;
+                      margin-bottom: 16px;
+                      border: 1px solid var(--gold-primary);
+                    "
+                  >
+                    <p style="color: var(--gold-primary); font-family: var(--font-serif); font-size: 1.25rem; font-weight: 700; margin-bottom: 8px;">
+                      EL FOGÓN — CARTA DIGITAL
+                    </p>
+                    <div
+                      id="admin-qr-preview-box"
+                      style="background: #ffffff; padding: 14px; border-radius: 8px; display: inline-block;"
+                    ></div>
+                    <p id="admin-qr-current-label" style="color: rgba(248,246,240,0.8); font-size: 0.78rem; margin-top: 8px;"></p>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="admin-qr-text-input" class="form-label">
+                      Opción A: Cambiar dirección web del QR
+                    </label>
+                    <div style="display: flex; gap: 8px;">
+                      <input
+                        type="text"
+                        id="admin-qr-text-input"
+                        class="form-control"
+                        style="flex: 1;"
+                        placeholder="https://elfogon.com.uy/#carta"
+                      />
+                      <button type="button" class="btn-primary" onclick="window.updateQrFromText()">
+                        Actualizar QR
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <span class="form-label">Opción B: Subir imagen de QR desde Celular o PC</span>
+                    <label for="admin-qr-file-input" class="upload-drop-label" style="padding: 12px;">
+                      <span>📷 Subir imagen de mi propio Código QR</span>
+                    </label>
+                    <input
+                      type="file"
+                      id="admin-qr-file-input"
+                      accept="image/*"
+                      style="display: none;"
+                    />
+                  </div>
+                </div>
+
+                <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                  <button type="button" class="btn-outline-dark" style="flex: 1;" onclick="window.print()">
+                    🖨️ Imprimir QR para Mesas
+                  </button>
+                  <button type="button" class="btn-outline-dark" onclick="window.resetQrToDefault()">
+                    Restaurar QR Original
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- SECCIÓN 2 DEL ADMIN: LISTADO VISUAL DE PLATOS EN TARJETAS FÁCILES -->
+            <div class="info-card-surface" style="padding: 24px;">
+              <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 14px; margin-bottom: 20px;">
+                <div>
+                  <p class="section-kicker">3. Editar Platos Existentes</p>
+                  <h3 style="font-family: var(--font-serif); font-size: 1.7rem; color: var(--bg-forest-deep);">
+                    Mis Platos (<span id="admin-total-count" class="tabular-nums">0</span>)
+                  </h3>
+                  <p style="font-size: 0.86rem; color: var(--charcoal-muted);">
+                    Toque cualquier texto o precio para cambiarlo, o toque <strong>“📷 Cambiar Foto”</strong> para elegir otra imagen desde su celular o PC.
+                  </p>
+                </div>
+
+                <div style="display: flex; flex-wrap: wrap; gap: 10px; flex: 1; max-width: 560px;">
+                  <input
+                    type="search"
+                    id="admin-search-input"
+                    class="form-control"
+                    style="flex: 1;"
+                    placeholder="Buscar plato para editar..."
+                    aria-label="Filtrar plato en el panel de administrador"
+                  />
+                  <select id="admin-category-filter" class="form-control" aria-label="Filtrar por categoría en el panel">
+                    <option value="todas">Todas las categorías</option>
+                    <option value="entradas">Entradas</option>
+                    <option value="parrilla">Parrillas y Vacunos</option>
+                    <option value="pollos-porcinos">Pollos, Porcinos y Ovinos</option>
+                    <option value="mariscos">Pescados y Mariscos</option>
+                    <option value="pastas">Pastas Caseras</option>
+                    <option value="milanesas">Milanesas</option>
+                    <option value="acompanamientos">Acompañamientos y Sugerencias</option>
+                    <option value="ensaladas">Ensaladas y Sin Sal</option>
+                    <option value="postres">Postres Caseros</option>
+                    <option value="bebidas">Bebidas y Vinos</option>
+                    <option value="turistico">Menú Turístico</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Tarjetas Visuales de Edición -->
+              <div id="admin-visual-cards-grid" class="admin-cards-grid"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Botón Flotante de WhatsApp Directo (Sin mensajes automáticos) -->
+    <a
+      href="https://wa.me/59899621962"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="whatsapp-float"
+      aria-label="Contactar por WhatsApp directo"
+    >
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+      </svg>
+      <span>WhatsApp Directo</span>
+    </a>
+
+    <!-- Navegación Inferior Móvil (4 Pestañas Claras, sin QR público) -->
+    <nav class="mobile-bottom-nav" aria-label="Navegación móvil">
+      <a href="#inicio" class="mobile-nav-item active" data-route="inicio">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+        </svg>
+        <span>Inicio</span>
+      </a>
+      <a href="#carta" class="mobile-nav-item" data-route="carta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+        </svg>
+        <span>Carta</span>
+      </a>
+      <a href="#historia" class="mobile-nav-item" data-route="historia">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        <span>Historia</span>
+      </a>
+      <a href="#reservas" class="mobile-nav-item" data-route="reservas">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+          <circle cx="12" cy="10" r="3"></circle>
+        </svg>
+        <span>Ubicación</span>
+      </a>
+    </nav>
+
+    <!-- Toast Notification -->
+    <div id="app-toast" class="toast-banner" role="status" aria-live="polite"></div>
+
+    <!-- Pie de Página Oficial (SIN ningún enlace a Admin ni a QR) -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <img
+              src="/assets/menu/logo_official_gold.jpg"
+              alt="El Fogón Parrillada Restaurante"
+              style="height: 54px; width: auto; border-radius: 8px; margin-bottom: 14px;"
+            />
+            <p style="margin-bottom: 10px; color: rgba(248, 246, 240, 0.8);">
+              En pleno centro de Montevideo y desde 1962, somos representantes de las mejores tradiciones de la gastronomía uruguaya.
+            </p>
+            <p style="font-size: 0.82rem; color: var(--gold-primary);">
+              PARRILLA · PASTAS · MARISCOS · VINO
+            </p>
+          </div>
+
+          <div>
+            <p class="footer-title">Navegación</p>
+            <ul class="footer-links">
+              <li><a href="#inicio">Portada Principal</a></li>
+              <li><a href="#carta">Carta Digital Completa</a></li>
+              <li><a href="#historia">Nuestra Historia (1962)</a></li>
+              <li><a href="#reservas">Ubicación Rápida y Reservas</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <p class="footer-title">Secciones de la Carta</p>
+            <ul class="footer-links">
+              <li><a href="#carta" onclick="window.openCartaCategory('entradas')">Entradas y Provolones</a></li>
+              <li><a href="#carta" onclick="window.openCartaCategory('parrilla')">Parrillas y Vacunos</a></li>
+              <li><a href="#carta" onclick="window.openCartaCategory('pastas')">Pastas Caseras</a></li>
+              <li><a href="#carta" onclick="window.openCartaCategory('mariscos')">Pescados y Mariscos</a></li>
+              <li><a href="#carta" onclick="window.openCartaCategory('postres')">Postres Caseros</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <p class="footer-title">Ubicación y Redes</p>
+            <p style="margin-bottom: 6px;">San José 1080, 11100 Montevideo, Uruguay</p>
+            <p style="margin-bottom: 6px;" class="tabular-nums">Teléfono: 2900 0900</p>
+            <p style="margin-bottom: 12px;">Abierto todos los días · Cierra a las 12 a.m.</p>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <a
+                href="https://www.google.com/maps/place/El+Fog%C3%B3n/@-34.9070622,-56.1928837,17z/data=!3m1!4b1!4m6!3m5!1s0x959f81cd5c70a2b1:0x64a7dbcfe1cafd59!8m2!3d-34.9070622!4d-56.1928837!16s%2Fg%2F1tg36df7?entry=ttu&g_ep=EgoyMDI2MTExMC4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="gmaps-circle-btn"
+                style="width: 38px; height: 38px;"
+                aria-label="Abrir Google Maps"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"
+                    fill="#EA4335"
+                  />
+                  <circle cx="12" cy="9" r="2.8" fill="#FFFFFF" />
+                </svg>
+              </a>
+              <a
+                href="https://www.instagram.com/parrillada.elfogon/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-pill-link"
+                style="padding: 6px 12px; font-size: 0.8rem;"
+              >
+                @parrillada.elfogon
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <span>© 1962–2026 El Fogón Parrillada (San José 1080, Montevideo). Todos los derechos reservados.</span>
+          <span>🔒 Sitio Verificado con Seguridad SSL y Protección Anti-Ataques — Desarrollado por CalixDev</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ==================== VANILLA JAVASCRIPT APPLICATION ENGINE ==================== -->
+    <script>
+      (function () {
+        'use strict';
+
+        const STORAGE_KEY = 'elfogon_menu_v3';
+        const QR_STORAGE_KEY = 'elfogon_qr_config_v1';
+        const ADMIN_PASS = 'elfogon';
+
+        const CATEGORY_LABELS = {
+          entradas: 'Entradas',
+          parrilla: 'Parrillas y Vacunos',
+          'pollos-porcinos': 'Pollos, Porcinos y Ovinos',
+          mariscos: 'Pescados y Mariscos',
+          pastas: 'Pastas Caseras',
+          milanesas: 'Milanesas',
+          acompanamientos: 'Acompañamientos y Sugerencias',
+          ensaladas: 'Ensaladas y Sin Sal',
+          postres: 'Postres Caseros',
+          bebidas: 'Bebidas y Vinos',
+          turistico: 'Menú Turístico',
+        };
+
+        // Fotografías reales recortadas directamente de Menu.pdf
+        const IMG_PARRILLA_FUEGO = '/assets/menu/dish_parrilla_cortes.jpg';
+        const IMG_ASADO_LENA = '/assets/menu/dish_asado_lena.jpg';
+        const IMG_DRY_AGER = '/assets/menu/dish_dry_ager.jpg';
+        const IMG_BIFE_PLATO = '/assets/menu/dish_bife_plato.jpg';
+        const IMG_FRENCH_RACK = '/assets/menu/dish_french_rack.jpg';
+        const IMG_COSTILLA_DRY = '/assets/menu/dish_costilla_dry.jpg';
+        const IMG_MASTER_BABY = '/assets/menu/dish_master_baby.jpg';
+        const IMG_PAELLA = '/assets/menu/dish_paella.jpg';
+        const IMG_COPA_VINO = '/assets/menu/dish_vino.jpg';
+        const IMG_RAVIOLONES = '/assets/menu/dish_raviolones.jpg';
+        const IMG_FLAN = '/assets/menu/dish_flan.jpg';
+        const IMG_PANQUEQUE = '/assets/menu/dish_panqueque.jpg';
+        const IMG_CREME_BRULEE = '/assets/menu/dish_creme_brulee.jpg';
+        const IMG_TARTA_MANZANA = '/assets/menu/dish_tarta_manzana.jpg';
+        const IMG_TIRAMISU = '/assets/menu/dish_tiramisu.jpg';
+
+        // Base de datos con TODOS los platos y descripciones EXACTAS de Menu.pdf (sin inventar textos)
+        const ORIGINAL_PDF_MENU = [
+          // ==================== PÁGINA 3: ENTRADAS ====================
+          {
+            id: 'ent-picada-1',
+            name: 'Picada I',
+            category: 'entradas',
+            description: 'Chorizo, colita de cuadril y fritas',
+            price: 980,
+            image: IMG_PARRILLA_FUEGO,
+            badge: 'Entradas',
+            available: true,
+          },
+          {
+            id: 'ent-picada-3',
+            name: 'Picada III',
+            category: 'entradas',
+            description: 'Chorizo, colita de cuadril, provolone y fritas',
+            price: 1290,
+            image: IMG_PARRILLA_FUEGO,
+            badge: 'Entradas',
+            available: true,
+          },
+          {
+            id: 'ent-daditos-milanesa',
+            name: 'Daditos a la milanesa',
+            category: 'entradas',
+            description: 'Entrada clásica de nuestra carta',
+            price: 560,
+            image: IMG_BIFE_PLATO,
+            badge: 'Entradas',
+            available: true,
+          },
+          {
+            id: 'ent-jamon-crudo-caprese',
+            name: 'Jamón crudo con caprese',
+            category: 'entradas',
+            description: 'Con caprese',
+            price: 620,
+            image: '/assets/menu/dish_jamon_caprese.jpg',
+            badge: 'Entradas',
+            available: true,
+          },
+          {
+            id: 'ent-jamon-cocido-crudo',
+            name: 'Jamón cocido / Jamón crudo',
+            category: 'entradas',
+            description: 'Fiambres seleccionados de entrada',
+            price: 520,
+            image: '/assets/menu/dish_jamon_caprese.jpg',
+            badge: 'Entradas',
+            available: true,
+          },
+          {
+            id: 'ent-lengua-vinagreta',
+            name: 'Lengua a la vinagreta',
+            category: 'entradas',
+            description: 'Sugerencia clásica de nuestra carta',
+            price: 490,
+            image: IMG_BIFE_PLATO,
+            badge: 'Sugerencias',
+            available: true,
+          },
+          {
+            id: 'ent-choto-molleja-chinchulin',
+            name: 'Molleja / Choto de cordero / Chinchulín',
+            category: 'entradas',
+            description: 'Achuras tradicionales a las brasas',
+            price: 590,
+            image: IMG_PARRILLA_FUEGO,
+            badge: 'Entradas',
+            available: true,
+          },
+          {
+            id: 'ent-chorizo-morcilla',
+            name: 'Chorizo / Morcilla / Salchicha con fritas',
+            category: 'entradas',
+            description: 'Chorizo con chimichurri “Fogón”, Morcilla o Salchicha con fritas',
+            price: 320,
+            image: IMG_PARRILLA_FUEGO,
+            badge: 'Entradas',
+            available: true,
+          },
+          {
+            id: 'ent-rinon',
+            name: 'Riñón / Riñón a la provenzal con fritas',
+            category: 'entradas',
+            description: 'A las brasas o a la provenzal con fritas',
+            price: 520,
+            image: IMG_FRENCH_RACK,
+            badge: 'Entradas',
+            available: true,
+          },
+          {
+            id: 'ent-sardinas-atun',
+            name: 'Sardinas con cebollitas / Mayonesa de atún / Atún con cebollitas',
+            category: 'entradas',
+            description: 'Entradas frías tradicionales',
+            price: 480,
+            image: IMG_PAELLA,
+            badge: 'Entradas',
+            available: true,
+          },
+          {
+            id: 'ent-provolone',
+            name: 'Provolone',
+            category: 'entradas',
+            description: 'Queso provolone con orégano',
+            price: 460,
+            image: IMG_PARRILLA_FUEGO,
+            badge: 'Sugerencias',
+            available: true,
+          },
+          {
+            id: 'ent-provolone-napo-panceta',
+            name: 'Provolone napolitano / Provolone con panceta',
+            category: 'entradas',
+            description: 'Napolitano (Jamón y tomate) o Provolone con panceta',
+            price: 540,
+            image: IMG_PARRILLA_FUEGO,
+            badge: 'Entradas',
+            available: true,
+          },
+          {
+            id: 'ent-provolone-fogon',
+            name: 'Provolone “Fogón”',
+            category: 'entradas',
+            description: 'Jamón, tomate, morrón y panceta',
+            price: 620,
+            image: IMG_PARRILLA_FUEGO,
+            badge: 'Especialidad',
+            available: true,
+          },
+          {
+            id: 'ent-provolone-rucula',
+            name: 'Provolone con rúcula, albahaca y tomate',
+            category: 'entradas',
+            description: 'Con rúcula, albahaca y tomate',
+            price: 560,
+            image: IMG_PARRILLA_FUEGO,
+            badge: 'Entradas',
+            available: true,
+          },
+
+          // ==================== PÁGINA 4: POLLOS, PORCINOS Y OVINOS ====================
+          {
+            id: 'pol-ajillo',
+            name: 'Pollo al ajillo con fritas',
+            category: 'pollos-porcinos',
+            description: 'Especialidad en pollos con papas fritas',
+            price: 860,
+            image: IMG_BIFE_PLATO,
+            badge: 'Pollos',
+            available: true,
+          },
+          {
+            id: 'pol-valenciana',
+            name: 'Arroz con pollo “Valenciana”',
+            category: 'pollos-porcinos',
+            description: 'Receta tradicional de la casa',
+            price: 890,
+            image: IMG_PAELLA,
+            badge: 'Pollos',
+            available: true,
+          },
+          {
+            id: 'pol-muslo-pechuga-brochette',
+            name: 'Muslo* / Pechuga* / Brochette de pollo*',
+            category: 'pollos-porcinos',
+            description: '(*) Incluyen una guarnición a su elección',
+            price: 840,
+            image: IMG_BIFE_PLATO,
+            badge: 'Incluye Guarnición (*)',
+            available: true,
+          },
+          {
+            id: 'pol-relleno',
+            name: 'Pollo relleno*',
+            category: 'pollos-porcinos',
+            description: 'Huevo, jamón y queso · (*) Incluye una guarnición a su elección',
+            price: 960,
+            image: IMG_BIFE_PLATO,
+            badge: 'Incluye Guarnición (*)',
+            available: true,
+          },
+          {
+            id: 'por-french-rack',
+            name: 'French rack*',
+            category: 'pollos-porcinos',
+            description: 'Porcinos y Ovinos · (*) Incluye una guarnición a su elección',
+            price: 1380,
+            image: IMG_FRENCH_RACK,
+            badge: 'Porcinos y Ovinos (*)',
+            available: true,
+          },
+          {
+            id: 'por-costillas-matambrito',
+            name: 'Costillas de cerdo* / Matambrito de cerdo*',
+            category: 'pollos-porcinos',
+            description: '(*) Incluyen una guarnición a su elección',
+            price: 1020,
+            image: IMG_FRENCH_RACK,
+            badge: 'Porcinos y Ovinos (*)',
+            available: true,
+          },
+          {
+            id: 'por-lechon',
+            name: 'Lechón a la parrilla*',
+            category: 'pollos-porcinos',
+            description: 'Frío o caliente. Consulte con el mozo · (*) Incluye guarnición',
+            price: 1180,
+            image: IMG_FRENCH_RACK,
+            badge: 'Porcinos y Ovinos (*)',
+            available: true,
+          },
+
+          // ==================== PÁGINA 5: PARRILLAS Y VACUNOS CON GUARNICIÓN ====================
+          {
+            id: 'par-tipica',
+            name: 'Parrilla Típica',
+            category: 'parrilla',
+            description: 'Asado, chorizo, morcilla, chinchulín, molleja, riñones y salchicha',
+            price: 1890,
+            image: IMG_PARRILLA_FUEGO,
+            badge: 'Parrillas',
+            available: true,
+          },
+          {
+            id: 'par-5-carnes',
+            name: 'Parrilla 5 Carnes',
+            category: 'parrilla',
+            description: 'Asado, pollo, costillas de cerdo, colita de cuadril y entrecot',
+            price: 2190,
+            image: IMG_PARRILLA_FUEGO,
+            badge: 'Parrillas',
+            available: true,
+          },
+          {
+            id: 'par-premium',
+            name: 'Parrilla Premium',
+            category: 'parrilla',
+            description: 'Picanha, baby beef y french rack con papa, boniato y calabaza a la parrilla',
+            price: 2690,
+            image: IMG_FRENCH_RACK,
+            badge: 'Parrillas',
+            available: true,
+          },
+          {
+            id: 'vac-costilla-dry-aged',
+            name: 'Costilla Dry Aged*',
+            category: 'parrilla',
+            description: 'Madurada 30 días · (*) Incluye una guarnición a su elección',
+            price: 1690,
+            image: IMG_COSTILLA_DRY,
+            badge: 'Recomendado · Carnes',
+            available: true,
+          },
+          {
+            id: 'vac-master-baby',
+            name: 'Master baby 700 g*',
+            category: 'parrilla',
+            description: 'Recomendado · (*) Incluye una guarnición a su elección',
+            price: 1650,
+            image: IMG_MASTER_BABY,
+            badge: 'Recomendado · Carnes',
+            available: true,
+          },
+          {
+            id: 'vac-matambre-arrollado',
+            name: 'Matambre arrollado',
+            category: 'parrilla',
+            description: 'Cocción larga',
+            price: 960,
+            image: IMG_ASADO_LENA,
+            badge: 'Vacunos',
+            available: true,
+          },
+          {
+            id: 'vac-asado-novillo',
+            name: 'Asado de novillo',
+            category: 'parrilla',
+            description: '8 costillas - sin guarnición',
+            price: 990,
+            image: IMG_ASADO_LENA,
+            badge: '8 Costillas',
+            available: true,
+          },
+          {
+            id: 'vac-baby-beef',
+            name: 'Baby beef*',
+            category: 'parrilla',
+            description: '(*) Incluye una guarnición a su elección',
+            price: 1190,
+            image: IMG_BIFE_PLATO,
+            badge: 'Vacunos con Guarnición (*)',
+            available: true,
+          },
+          {
+            id: 'vac-brochette-lomo',
+            name: 'Brochette de lomo*',
+            category: 'parrilla',
+            description: 'Lomo cortado en daditos con panceta, morrón y cebolla · (*) Incluye guarnición',
+            price: 1150,
+            image: IMG_BIFE_PLATO,
+            badge: 'Vacunos con Guarnición (*)',
+            available: true,
+          },
+          {
+            id: 'vac-entrana-vacio-picanha',
+            name: 'Entraña fina* / Bife de vacío* / Picanha*',
+            category: 'parrilla',
+            description: '(*) Incluyen una guarnición a su elección',
+            price: 1220,
+            image: IMG_PARRILLA_FUEGO,
+            badge: 'Vacunos con Guarnición (*)',
+            available: true,
+          },
+          {
+            id: 'vac-colita-entrecot-lomo',
+            name: 'Colita de cuadril* / Entrecot* / Petit entrecot* / Filet de lomo* / Petit filet de lomo*',
+            category: 'parrilla',
+            description: '(*) Incluyen una guarnición a su elección: Papas fritas, Ensalada, Boniato, Puré, Arroz o Papa natural',
+            price: 1160,
+            image: IMG_BIFE_PLATO,
+            badge: 'Vacunos con Guarnición (*)',
+            available: true,
+          },
+
+          // ==================== PÁGINA 6: PESCADOS Y MARISCOS ====================
+          {
+            id: 'mar-paella-dos',
+            name: 'Paella para dos',
+            category: 'mariscos',
+            description: 'Con pulpo y langostinos · Paella valenciana especial para dos',
+            price: 2150,
+            image: IMG_PAELLA,
+            badge: 'Recomendado · Mariscos',
+            available: true,
+          },
+          {
+            id: 'mar-pescado-casa',
+            name: 'Pescado de la casa*',
+            category: 'mariscos',
+            description: 'Con papa, cebolla y mejillones · Servido con papa natural y cocido a la plancha con aceite de oliva',
+            price: 1050,
+            image: IMG_PAELLA,
+            badge: 'Pescados y Mariscos',
+            available: true,
+          },
+          {
+            id: 'mar-paella-pulpo-langostinos',
+            name: 'Paella a la valenciana / Pulpo a la gallega / Langostinos al ajillo',
+            category: 'mariscos',
+            description: 'Especialidades de mariscos al momento',
+            price: 1390,
+            image: IMG_PAELLA,
+            badge: 'Pescados y Mariscos',
+            available: true,
+          },
+          {
+            id: 'mar-merluza-lenguado-salmon',
+            name: 'Merluza natural* / Lenguado natural* / Salmón natural*',
+            category: 'mariscos',
+            description: '* Los pescados son servidos con papa natural y cocidos a la plancha con aceite de oliva',
+            price: 1190,
+            image: IMG_RAVIOLONES,
+            badge: 'A la Plancha con Oliva',
+            available: true,
+          },
+          {
+            id: 'mar-bacalao',
+            name: 'Bacalao a la española',
+            category: 'mariscos',
+            description: 'Con garbanzos, papa natural y rustrido',
+            price: 1340,
+            image: IMG_PAELLA,
+            badge: 'Pescados y Mariscos',
+            available: true,
+          },
+          {
+            id: 'mar-brochette-cazuela-calamares',
+            name: 'Brochette de pescado / Miniaturas / Cazuela de mariscos / Calamares a la romana',
+            category: 'mariscos',
+            description: 'Brochette con jamón crudo y langostinos, Miniaturas de pescado, Cazuela o Calamares a la romana',
+            price: 1080,
+            image: IMG_PAELLA,
+            badge: 'Pescados y Mariscos',
+            available: true,
+          },
+
+          // ==================== PÁGINA 7: PASTAS CASERAS ====================
+          {
+            id: 'pas-raviolones-salmon',
+            name: 'Raviolones de salmón con salsa de mariscos',
+            category: 'pastas',
+            description: 'Plato recomendado de nuestra sección de Pastas Caseras',
+            price: 980,
+            image: IMG_RAVIOLONES,
+            badge: 'Recomendado · Pastas',
+            available: true,
+          },
+          {
+            id: 'pas-lasagna-canelones',
+            name: 'Lasagna / Canelones',
+            category: 'pastas',
+            description: 'Pastas caseras elaboradas en el restaurante',
+            price: 820,
+            image: IMG_RAVIOLONES,
+            badge: 'Pastas Caseras',
+            available: true,
+          },
+          {
+            id: 'pas-noquis-capelettis-tallarines-ravioles',
+            name: 'Ñoquis / Capelettis / Tallarines / Ravioles',
+            category: 'pastas',
+            description: 'Italiana, fileto o naturales',
+            price: 740,
+            image: IMG_RAVIOLONES,
+            badge: 'Pastas Caseras',
+            available: true,
+          },
+          {
+            id: 'pas-sorrentinos-raviolones',
+            name: 'Sorrentinos de jamón y muzzarella / Raviolones (Ricotta o salmón)',
+            category: 'pastas',
+            description: 'Acompañe con Nuestras Salsas: Cuatro quesos, Al champiñón, Carusso, Al pesto, Caprese, Blanca, Mariscos, Rosa o Roquefort',
+            price: 860,
+            image: IMG_RAVIOLONES,
+            badge: 'Pastas Caseras',
+            available: true,
+          },
+
+          // ==================== PÁGINA 8: MILANESAS ====================
+          {
+            id: 'mil-pollo-lomo',
+            name: 'Milanesa de pollo con guarnición / Milanesa de lomo con guarnición',
+            category: 'milanesas',
+            description: 'Clásicas milanesas de la casa con guarnición',
+            price: 890,
+            image: IMG_COSTILLA_DRY,
+            badge: 'Milanesas',
+            available: true,
+          },
+          {
+            id: 'mil-antojo',
+            name: 'Antojo de milanesa',
+            category: 'milanesas',
+            description: 'Con papas fritas y dos huevos; vos elegí dónde',
+            price: 960,
+            image: IMG_COSTILLA_DRY,
+            badge: 'Milanesas',
+            available: true,
+          },
+          {
+            id: 'mil-rellena',
+            name: 'Milanesa rellena',
+            category: 'milanesas',
+            description: 'Jamón y queso',
+            price: 1040,
+            image: IMG_COSTILLA_DRY,
+            badge: 'Milanesas',
+            available: true,
+          },
+          {
+            id: 'mil-sugerencias',
+            name: 'Sugerencias para tu milanesa: Maryland / Napolitana / Caprese / Ibérica / Cuatro quesos / Al champiñón',
+            category: 'milanesas',
+            description: 'Maryland (Banana frita, panceta y crema de choclo) · Napolitana (Jamón, mozzarella y salsa de tomate) · Caprese · Ibérica (Jamón crudo, aceitunas y morrón) · Cuatro quesos · Al champiñón (Portobello y salsa de extracto de carne)',
+            price: 1090,
+            image: IMG_COSTILLA_DRY,
+            badge: 'Sugerencias Milanesa',
+            available: true,
+          },
+
+          // ==================== PÁGINAS 8 Y 9: ACOMPAÑAMIENTOS Y SUGERENCIAS ====================
+          {
+            id: 'aco-fritas-fogon',
+            name: 'Fritas “estilo Fogón” / Fritas al champiñón',
+            category: 'acompanamientos',
+            description: 'Crocante de panceta y salsa de quesos',
+            price: 490,
+            image: IMG_MASTER_BABY,
+            badge: 'Acompañamientos',
+            available: true,
+          },
+          {
+            id: 'aco-tortilla-verduras',
+            name: 'Tortilla de papa, cebolla, morrón y queso / Champiñones a la provenzal / Panaché de verduras',
+            category: 'acompanamientos',
+            description: 'También disponibles: Papas hervidas o arroz, Papas fritas, Puré de papas, calabaza o manzana, Morrón a las brasas, Parrilla de verduras, Verduras salteadas y Arroz “Fogón”',
+            price: 480,
+            image: IMG_MASTER_BABY,
+            badge: 'Acompañamientos',
+            available: true,
+          },
+          {
+            id: 'aco-matambre-casero',
+            name: 'Matambre casero',
+            category: 'acompanamientos',
+            description: 'Secreto de Campos. Frío con ensalada rusa',
+            price: 560,
+            image: IMG_MASTER_BABY,
+            badge: 'Sugerencias',
+            available: true,
+          },
+
+          // ==================== PÁGINAS 9 Y 10: RECOMENDADOS SIN SAL Y ENSALADAS ====================
+          {
+            id: 'ens-sin-sal',
+            name: 'Recomendados Sin Sal: Tibia de pollo / Tibia de salmón / Tibia de langostinos / Verduras a la parrilla',
+            category: 'ensaladas',
+            description: 'Tibia de pollo (Base verde con centro de pollo) · Tibia de salmón (Hojas verdes, tomate y tiras de salmón con oliva y limón) · Tibia de langostinos (Rúcula, tomate y queso con oliva y limón) · Verduras a la parrilla (Boniato, calabaza, papa y morrón)',
+            price: 780,
+            image: IMG_MASTER_BABY,
+            badge: 'Recomendados Sin Sal',
+            available: true,
+          },
+          {
+            id: 'ens-nano-tato-joaco',
+            name: 'Ensaladas “Nano” / “Tato” / “Joaco” / “Fogón”',
+            category: 'ensaladas',
+            description: 'Nano (Lechuga, tomate, ananá, queso, cerezas, espárragos, aceitunas y palmitos) · Tato (Base verde, pollo, crutones, panceta y aderezo del chef) · Joaco (Lechuga, apio, pollo, jamón, queso y salsa golf) · Fogón (Zanahoria, tomate, palmito, espárrago y huevo)',
+            price: 650,
+            image: IMG_MASTER_BABY,
+            badge: 'Ensaladas',
+            available: true,
+          },
+          {
+            id: 'ens-juan-maria-teo-huerta',
+            name: 'Ensaladas “Juan Segundo” / “María Dolores” / “Teo” / “María Paz” / De la Huerta',
+            category: 'ensaladas',
+            description: 'Juan Segundo (Rúcula, parmesano, jamón crudo y cherry) · María Dolores (Mostaza, oliva y queso brie frío o caliente) · Teo (Base verde, langostinos, jamón crudo, oliva y albahaca) · María Paz (Manzana, nueces, apio, roquefort y crema) · De la Huerta (Calabaza asada y mix de semillas)',
+            price: 680,
+            image: IMG_MASTER_BABY,
+            badge: 'Ensaladas',
+            available: true,
+          },
+          {
+            id: 'ens-clasicas',
+            name: 'Ensaladas Clásicas: Verde / Caprese / Surtida / Mixta / Lechuga y tomate / Rusa / De atún',
+            category: 'ensaladas',
+            description: 'Caprese (Tomate, albahaca y mozzarella artesanal) · Surtida (Lechuga, tomate, zanahoria, remolacha, cebolla, choclo, palmitos y huevo)',
+            price: 490,
+            image: IMG_MASTER_BABY,
+            badge: 'Ensaladas',
+            available: true,
+          },
+
+          // ==================== PÁGINA 11: BEBIDAS ====================
+          {
+            id: 'beb-sin-alcohol',
+            name: 'Agua Mineral 500cc Salus / Refrescos 300cc / Jugo natural de naranja (250cc o 500cc) / Limonada',
+            category: 'bebidas',
+            description: 'Agua Salus con o sin gas · Refrescos Línea Coca Cola · Limonada con menta y jengibre',
+            price: 220,
+            image: IMG_COPA_VINO,
+            badge: 'Bebidas',
+            available: true,
+          },
+          {
+            id: 'beb-cervezas',
+            name: 'Cervezas artesanales uruguayas 500cc / Patricia litro / Corona 300cc / Estrella Galicia chica y 1906 / Sin alcohol',
+            category: 'bebidas',
+            description: 'Variedad de cervezas nacionales e importadas',
+            price: 360,
+            image: IMG_COPA_VINO,
+            badge: 'Cervezas',
+            available: true,
+          },
+          {
+            id: 'beb-vinos',
+            name: 'Vino de la casa 250cc / Sangría o Clericó para dos / Vinos por copa y Selecciones “Fogón”',
+            category: 'bebidas',
+            description: 'Consulte con el mozo por nuestra carta de vinos y Selecciones “Fogón”',
+            price: 680,
+            image: IMG_COPA_VINO,
+            badge: 'Vinos',
+            available: true,
+          },
+          {
+            id: 'beb-destilados-whiskies',
+            name: 'Aperitivos, Licores y Whiskies (Jack Daniel’s, Chivas Regal, 12 años, Single Malt, Jim Beam 6 años)',
+            category: 'bebidas',
+            description: 'Vermouth Bianco y Rosso, Tanqueray gin, Cointreau, Ron dorado y añejo, Vodka, Grappa, Caña, Campari, Jerez Tío Pepe, Fernet, Grappa miel, Kahlua, Porto, Sambuca, Tequila 1800 reposado y Amarula',
+            price: 490,
+            image: IMG_COPA_VINO,
+            badge: 'Whiskies y Licores',
+            available: true,
+          },
+
+          // ==================== PÁGINA 13: POSTRES CASEROS ====================
+          {
+            id: 'pos-flan-casero',
+            name: 'Flan casero / Arroz con Leche',
+            category: 'postres',
+            description: 'Postres caseros tradicionales de El Fogón',
+            price: 350,
+            image: IMG_FLAN,
+            badge: 'Postres Caseros',
+            available: true,
+          },
+          {
+            id: 'pos-isla-flotante',
+            name: 'Isla flotante',
+            category: 'postres',
+            description: 'Con sambayón',
+            price: 390,
+            image: IMG_FLAN,
+            badge: 'Postres Caseros',
+            available: true,
+          },
+          {
+            id: 'pos-tarta-combinado',
+            name: 'Tarta de manzana (Fría o caliente) / Combinado “Fogón”',
+            category: 'postres',
+            description: 'Combinado “Fogón”: De isla flotante o de tarta de manzana con helado',
+            price: 440,
+            image: IMG_TARTA_MANZANA,
+            badge: 'Postres Caseros',
+            available: true,
+          },
+          {
+            id: 'pos-creme-brulee',
+            name: 'Crème Brûlée',
+            category: 'postres',
+            description: 'Clásico postre casero caramelizado',
+            price: 450,
+            image: IMG_CREME_BRULEE,
+            badge: 'Postres Caseros',
+            available: true,
+          },
+          {
+            id: 'pos-tiramisu',
+            name: 'Tiramisú',
+            category: 'postres',
+            description: 'Queso mascarpone',
+            price: 460,
+            image: IMG_TIRAMISU,
+            badge: 'Postres Caseros',
+            available: true,
+          },
+          {
+            id: 'pos-panqueque-degustacion',
+            name: 'Postre degustación para dos / Panqueque de manzana o dulce de leche',
+            category: 'postres',
+            description: 'Elaborados al momento',
+            price: 480,
+            image: IMG_PANQUEQUE,
+            badge: 'Postres Caseros',
+            available: true,
+          },
+          {
+            id: 'pos-helado-donpedro-cafe',
+            name: 'Almendrado / Don Pedro / Frutas de estación / Café italiano Illy',
+            category: 'postres',
+            description: 'Almendrado (Con baño de chocolate) · Don Pedro (Helado, nueces, crema y whisky) · Frutillas y Ensalada de frutas con helado · Café italiano Illy (Común o descafeinado)',
+            price: 420,
+            image: IMG_PANQUEQUE,
+            badge: 'Postres y Café',
+            available: true,
+          },
+
+          // ==================== PÁGINA 14: MENÚ TURÍSTICO ====================
+          {
+            id: 'tur-menu-completo',
+            name: 'Menú Turístico (1 Entrada + 1 Plato Principal + 1 Postre)',
+            category: 'turistico',
+            description: 'Entradas: Sopa de verduras, Chorizo o morcilla, Lengua a la vinagreta, Matambre casero, Mayonesa de atún, Jamón cocido con ensalada o Ensalada caprese · Principales: Entrecot con fritas, Matambre con puré, Colita de cuadril, Muslo o pechuga, Pollo relleno (Receta de Sánchez), Costilla de cerdo, Filete de pescado, Lasagna, Canelones, Ravioles de verdura, Ñoquis, Verduras al vapor, Omelette o Milanesa de pollo · Postres: Helados, Cassata, Flan casero con crema dulce, Isla flotante, Tarta de manzana, Ensalada de fruta o Martín Fierro',
+            price: 1490,
+            image: IMG_COSTILLA_DRY,
+            badge: 'Menú Turístico',
+            available: true,
+          },
+        ];
+
+        // Estado de la aplicación
+        let menuDishes = [];
+        let activeCategory = 'todas';
+        let searchQuery = '';
+        let adminUnlocked = false;
+        let secretKeyBuffer = '';
+        let uploadedNewDishDataUrl = '';
+        let qrConfig = {
+          mode: 'text',
+          text: 'https://elfogon.com.uy/#carta',
+          customImage: '',
+        };
+
+        function normalizeText(text) {
+          return String(text || '')
+            .toLowerCase()
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .trim();
+        }
+
+        function formatPrice(num) {
+          const n = Number.isFinite(Number(num)) ? Math.max(0, Math.round(Number(num))) : 0;
+          return '$ ' + n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+        }
+
+        function showToast(message) {
+          const toast = document.getElementById('app-toast');
+          if (!toast) return;
+          toast.textContent = message;
+          toast.classList.add('visible');
+          clearTimeout(window.__toastTimer);
+          window.__toastTimer = setTimeout(() => {
+            toast.classList.remove('visible');
+          }, 3000);
+        }
+
+        function escapeHtml(str) {
+          return String(str || '')
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;');
+        }
+
+        function escapeQuotes(str) {
+          return String(str || '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
+        }
+
+        // Compresor de imágenes desde Celular o PC mediante HTML5 Canvas
+        function compressImageFileToDataURL(file, maxWidth = 720, quality = 0.82) {
+          return new Promise((resolve, reject) => {
+            if (!file) return reject(new Error('No file'));
+            const reader = new FileReader();
+            reader.onload = function (ev) {
+              const img = new Image();
+              img.onload = function () {
+                const canvas = document.createElement('canvas');
+                let w = img.naturalWidth || img.width;
+                let h = img.naturalHeight || img.height;
+                if (w > maxWidth) {
+                  h = Math.round((h * maxWidth) / w);
+                  w = maxWidth;
+                }
+                canvas.width = w;
+                canvas.height = h;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(img, 0, 0, w, h);
+                resolve(canvas.toDataURL('image/jpeg', quality));
+              };
+              img.onerror = reject;
+              img.src = ev.target.result;
+            };
+            reader.onerror = reject;
+            reader.readAsDataURL(file);
+          });
+        }
+
+        // Fallback SVG elegante
+        window.handleImageFallback = function (imgEl, titleText, subText) {
+          if (!imgEl || imgEl.dataset.fallbackApplied === '1') return;
+          imgEl.dataset.fallbackApplied = '1';
+          const safeTitle = String(titleText || 'El Fogón 1962').replace(/[<>&"]/g, '');
+          const safeSub = String(subText || 'San José 1080 · Montevideo').replace(/[<>&"]/g, '');
+          const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="600" height="450">
+            <rect width="600" height="450" fill="#163024"/>
+            <rect x="24" y="24" width="552" height="402" rx="8" fill="none" stroke="#d9a04e" stroke-opacity="0.5" stroke-width="2"/>
+            <text x="300" y="190" text-anchor="middle" fill="#d9a04e" font-family="Georgia, serif" font-size="22" letter-spacing="4">EL FOGÓN · 1962</text>
+            <text x="300" y="240" text-anchor="middle" fill="#f8f6f0" font-family="Georgia, serif" font-size="26" font-weight="bold">${safeTitle.slice(0, 32)}</text>
+            <text x="300" y="280" text-anchor="middle" fill="#d9a04e" font-family="sans-serif" font-size="16">${safeSub.slice(0, 40)}</text>
+          </svg>`;
+          imgEl.src = 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
+        };
+
+        function parseImageAndPosition(rawImgUrl) {
+          const str = String(rawImgUrl || IMG_PARRILLA_FUEGO);
+          if (str.includes('#pos=')) {
+            const [cleanSrc, posPart] = str.split('#pos=');
+            const posVal = posPart.replace(',', ' ');
+            return { src: cleanSrc, objectPos: posVal };
+          }
+          return { src: str, objectPos: 'center center' };
+        }
+
+        // Inicialización desde localStorage
+        function loadMenuFromStorage() {
+          try {
+            const raw = localStorage.getItem(STORAGE_KEY);
+            if (raw) {
+              const parsed = JSON.parse(raw);
+              if (Array.isArray(parsed) && parsed.length > 0) {
+                menuDishes = parsed;
+                return;
+              }
+            }
+          } catch (e) {}
+          menuDishes = JSON.parse(JSON.stringify(ORIGINAL_PDF_MENU));
+          saveMenuToStorage();
+        }
+
+        function saveMenuToStorage() {
+          try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(menuDishes));
+          } catch (e) {
+            showToast('Atención: Memoria llena para fotos muy pesadas.');
+          }
+        }
+
+        function loadQrConfig() {
+          try {
+            const raw = localStorage.getItem(QR_STORAGE_KEY);
+            if (raw) {
+              const parsed = JSON.parse(raw);
+              if (parsed && typeof parsed === 'object') {
+                qrConfig = Object.assign(qrConfig, parsed);
+              }
+            }
+          } catch (e) {}
+        }
+
+        function saveQrConfig() {
+          try {
+            localStorage.setItem(QR_STORAGE_KEY, JSON.stringify(qrConfig));
+          } catch (e) {}
+        }
+
+        // Tarjeta de Plato Pública (Solo para ver foto, descripción y precio, sin botón de sumar a selección)
+        function createDishCardHTML(dish) {
+          const catLabel = CATEGORY_LABELS[dish.category] || dish.category;
+          const badgeHtml = dish.badge
+            ? `<span aria-hidden="true">·</span><span class="dish-kicker-highlight">${escapeHtml(dish.badge)}</span>`
+            : '';
+          const imgInfo = parseImageAndPosition(dish.image);
+
+          return `
+            <article class="dish-card reveal-up" data-dish-id="${escapeHtml(dish.id)}">
+              <div class="dish-image-box">
+                <img
+                  src="${escapeHtml(imgInfo.src)}"
+                  style="object-position: ${escapeHtml(imgInfo.objectPos)};"
+                  alt="${escapeHtml(dish.name)}"
+                  loading="lazy"
+                  referrerpolicy="no-referrer"
+                  onerror="window.handleImageFallback(this, '${escapeQuotes(dish.name)}', '${escapeQuotes(catLabel)}')"
+                />
+              </div>
+              <div class="dish-body">
+                <div>
+                  <div class="dish-kicker">
+                    <span>${escapeHtml(catLabel)}</span>
+                    ${badgeHtml}
+                  </div>
+                  <div class="dish-title-row">
+                    <h3 class="dish-title">${escapeHtml(dish.name)}</h3>
+                    <span class="dish-price tabular-nums">${formatPrice(dish.price)}</span>
+                  </div>
+                  <p class="dish-desc">${escapeHtml(dish.description)}</p>
+                </div>
+              </div>
+            </article>
+          `;
+        }
+
+        // Renderizar Portada (#inicio) y Carta (#carta)
+        function renderPublicMenu() {
+          const availableDishes = menuDishes.filter((d) => d.available !== false);
+
+          const homeCountEl = document.getElementById('home-total-dishes-count');
+          if (homeCountEl) homeCountEl.textContent = String(availableDishes.length);
+
+          const featuredContainer = document.getElementById('home-featured-dishes');
+          if (featuredContainer) {
+            const featuredIds = [
+              'vac-costilla-dry-aged',
+              'vac-master-baby',
+              'mar-paella-dos',
+              'pas-raviolones-salmon',
+              'par-premium',
+              'pos-flan-casero',
+            ];
+            let featuredList = availableDishes.filter((d) => featuredIds.includes(d.id));
+            if (featuredList.length < 6) {
+              featuredList = availableDishes.slice(0, 6);
+            }
+            featuredContainer.innerHTML = featuredList.slice(0, 6).map(createDishCardHTML).join('');
+          }
+
+          const q = normalizeText(searchQuery);
+          const filtered = availableDishes.filter((dish) => {
+            const matchesCat = activeCategory === 'todas' || dish.category === activeCategory;
+            if (!matchesCat) return false;
+            if (!q) return true;
+            const hay = normalizeText(
+              `${dish.name} ${dish.description} ${dish.badge || ''} ${CATEGORY_LABELS[dish.category] || ''}`
+            );
+            return hay.includes(q);
+          });
+
+          const countEl = document.getElementById('menu-filtered-count');
+          if (countEl) countEl.textContent = String(filtered.length);
+
+          const gridEl = document.getElementById('carta-dishes-grid');
+          const emptyEl = document.getElementById('carta-empty-state');
+
+          if (gridEl && emptyEl) {
+            if (filtered.length === 0) {
+              gridEl.innerHTML = '';
+              emptyEl.style.display = 'block';
+            } else {
+              emptyEl.style.display = 'none';
+              gridEl.innerHTML = filtered.map(createDishCardHTML).join('');
+            }
+          }
+
+          observeRevealElements();
+        }
+
+        window.openCartaCategory = function (categoryKey) {
+          activeCategory = categoryKey || 'todas';
+          syncCategoryTabsUI();
+          renderPublicMenu();
+          window.location.hash = '#carta';
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+
+        window.resetCartaFilters = function () {
+          activeCategory = 'todas';
+          searchQuery = '';
+          const searchInput = document.getElementById('menu-search-input');
+          const clearBtn = document.getElementById('menu-search-clear');
+          if (searchInput) searchInput.value = '';
+          if (clearBtn) clearBtn.style.display = 'none';
+          syncCategoryTabsUI();
+          renderPublicMenu();
+        };
+
+        function syncCategoryTabsUI() {
+          const buttons = document.querySelectorAll('#category-tabs-container .cat-filter-btn');
+          buttons.forEach((btn) => {
+            const isMatch = btn.getAttribute('data-category') === activeCategory;
+            btn.classList.toggle('active', isMatch);
+            btn.setAttribute('aria-selected', isMatch ? 'true' : 'false');
+          });
+        }
+
+        // ==================== PANEL DE ADMIN VISUAL E INTUITIVO ====================
+        function renderAdminVisualCards() {
+          const grid = document.getElementById('admin-visual-cards-grid');
+          const totalCountEl = document.getElementById('admin-total-count');
+          const adminSearch = normalizeText(
+            (document.getElementById('admin-search-input') || {}).value || ''
+          );
+          const adminCat =
+            (document.getElementById('admin-category-filter') || {}).value || 'todas';
+
+          if (!grid) return;
+          if (totalCountEl) totalCountEl.textContent = String(menuDishes.length);
+
+          const filtered = menuDishes.filter((d) => {
+            const matchCat = adminCat === 'todas' || d.category === adminCat;
+            if (!matchCat) return false;
+            if (!adminSearch) return true;
+            return normalizeText(`${d.name} ${d.description} ${d.category}`).includes(adminSearch);
+          });
+
+          grid.innerHTML = filtered
+            .map((dish) => {
+              const catOptions = Object.entries(CATEGORY_LABELS)
+                .map(
+                  ([key, label]) =>
+                    `<option value="${key}" ${dish.category === key ? 'selected' : ''}>${label}</option>`
+                )
+                .join('');
+              const imgInfo = parseImageAndPosition(dish.image);
+
+              return `
+                <div class="admin-dish-card" data-admin-card="${escapeHtml(dish.id)}">
+                  <div class="admin-dish-photo-wrap">
+                    <img
+                      src="${escapeHtml(imgInfo.src)}"
+                      style="object-position: ${escapeHtml(imgInfo.objectPos)};"
+                      alt="${escapeHtml(dish.name)}"
+                      onerror="window.handleImageFallback(this, '${escapeQuotes(dish.name)}', 'El Fogón')"
+                    />
+                    <label class="admin-photo-upload-btn">
+                      📷 Cambiar Foto (Celular / PC)
+                      <input
+                        type="file"
+                        accept="image/*"
+                        style="display: none;"
+                        onchange="window.handleDishPhotoUpload(event, '${escapeQuotes(dish.id)}')"
+                      />
+                    </label>
+                  </div>
+
+                  <div class="admin-dish-card-body">
+                    <div>
+                      <label class="form-label" style="font-size: 0.76rem;">Nombre del Plato</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        style="width: 100%; padding: 8px 10px; font-weight: 700;"
+                        value="${escapeHtml(dish.name)}"
+                        aria-label="Editar nombre de ${escapeHtml(dish.name)}"
+                        onchange="window.updateAdminDishField('${escapeQuotes(dish.id)}', 'name', this.value)"
+                      />
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 8px;">
+                      <div>
+                        <label class="form-label" style="font-size: 0.76rem;">Categoría</label>
+                        <select
+                          class="form-control"
+                          style="width: 100%; padding: 8px;"
+                          aria-label="Editar categoría de ${escapeHtml(dish.name)}"
+                          onchange="window.updateAdminDishField('${escapeQuotes(dish.id)}', 'category', this.value)"
+                        >
+                          ${catOptions}
+                        </select>
+                      </div>
+                      <div>
+                        <label class="form-label" style="font-size: 0.76rem;">Precio ($)</label>
+                        <input
+                          type="number"
+                          class="form-control tabular-nums"
+                          style="width: 100%; padding: 8px; font-weight: 700;"
+                          value="${Number(dish.price)}"
+                          min="0"
+                          aria-label="Editar precio de ${escapeHtml(dish.name)}"
+                          onchange="window.updateAdminDishField('${escapeQuotes(dish.id)}', 'price', Number(this.value))"
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label class="form-label" style="font-size: 0.76rem;">Descripción en la Carta</label>
+                      <textarea
+                        class="form-control"
+                        rows="2"
+                        style="width: 100%; padding: 8px 10px; font-size: 0.84rem;"
+                        aria-label="Editar descripción de ${escapeHtml(dish.name)}"
+                        onchange="window.updateAdminDishField('${escapeQuotes(dish.id)}', 'description', this.value)"
+                      >${escapeHtml(dish.description)}</textarea>
+                    </div>
+
+                    <div style="display: flex; gap: 8px; margin-top: auto; padding-top: 8px;">
+                      <button
+                        type="button"
+                        class="btn-outline-dark"
+                        style="flex: 1; padding: 8px; font-size: 0.8rem; ${
+                          dish.available === false
+                            ? 'border-color: var(--danger); color: var(--danger);'
+                            : 'border-color: var(--success); color: var(--success);'
+                        }"
+                        onclick="window.toggleAdminDishStock('${escapeQuotes(dish.id)}')"
+                      >
+                        ${dish.available === false ? 'Oculto (Sin Stock)' : '✓ Visible en Carta'}
+                      </button>
+                      <button
+                        type="button"
+                        class="btn-outline-dark"
+                        style="padding: 8px 12px; font-size: 0.8rem; border-color: var(--danger); color: var(--danger);"
+                        onclick="window.deleteAdminDish('${escapeQuotes(dish.id)}')"
+                        aria-label="Eliminar ${escapeHtml(dish.name)}"
+                      >
+                        Borrar
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              `;
+            })
+            .join('');
+        }
+
+        window.handleDishPhotoUpload = function (event, dishId) {
+          const file = event && event.target && event.target.files && event.target.files[0];
+          if (!file) return;
+          compressImageFileToDataURL(file, 680, 0.82)
+            .then((dataUrl) => {
+              const item = menuDishes.find((d) => d.id === dishId);
+              if (!item) return;
+              item.image = dataUrl;
+              saveMenuToStorage();
+              renderAdminVisualCards();
+              renderPublicMenu();
+              showToast(`Foto actualizada para: ${item.name}`);
+            })
+            .catch(() => {
+              showToast('No se pudo leer la imagen seleccionada');
+            });
+        };
+
+        window.updateAdminDishField = function (dishId, field, value) {
+          const item = menuDishes.find((d) => d.id === dishId);
+          if (!item) return;
+          if (field === 'price') {
+            item.price = Number.isFinite(Number(value))
+              ? Math.max(0, Math.round(Number(value)))
+              : item.price;
+          } else {
+            item[field] = String(value).trim();
+          }
+          saveMenuToStorage();
+          renderPublicMenu();
+          showToast(`Guardado: ${item.name}`);
+        };
+
+        window.toggleAdminDishStock = function (dishId) {
+          const item = menuDishes.find((d) => d.id === dishId);
+          if (!item) return;
+          item.available = item.available === false ? true : false;
+          saveMenuToStorage();
+          renderAdminVisualCards();
+          renderPublicMenu();
+          showToast(
+            `${item.name}: ${item.available ? 'Visible en la Carta' : 'Oculto en la Carta'}`
+          );
+        };
+
+        window.deleteAdminDish = function (dishId) {
+          const target = menuDishes.find((d) => d.id === dishId);
+          if (!target) return;
+          menuDishes = menuDishes.filter((d) => d.id !== dishId);
+          saveMenuToStorage();
+          renderAdminVisualCards();
+          renderPublicMenu();
+          showToast(`Plato borrado: ${target.name}`);
+        };
+
+        window.restoreOriginalMenu = function () {
+          menuDishes = JSON.parse(JSON.stringify(ORIGINAL_PDF_MENU));
+          saveMenuToStorage();
+          renderAdminVisualCards();
+          renderPublicMenu();
+          showToast('Carta original del PDF restaurada');
+        };
+
+        window.saveAndReturnToCarta = function () {
+          saveMenuToStorage();
+          renderPublicMenu();
+          showToast('Cambios guardados en la Carta');
+          window.location.hash = '#carta';
+        };
+
+        window.lockAdminSession = function () {
+          adminUnlocked = false;
+          syncAdminAuthView();
+          window.location.hash = '#inicio';
+          showToast('Sesión cerrada');
+        };
+
+        // ==================== GESTIÓN DEL CÓDIGO QR EN EL PANEL DE ADMIN ====================
+        function generateQrSvgMarkup(seedText) {
+          const size = 21;
+          const cells = [];
+          const seedStr = String(seedText || 'https://elfogon.com.uy/#carta');
+
+          function isFinderPattern(r, c) {
+            return (
+              (r < 7 && c < 7) ||
+              (r < 7 && c >= size - 7) ||
+              (r >= size - 7 && c < 7)
+            );
+          }
+
+          function finderBit(r, c) {
+            if (r === 0 || r === 6 || c === 0 || c === 6) return true;
+            if (r >= 2 && r <= 4 && c >= 2 && c <= 4) return true;
+            return false;
+          }
+
+          for (let r = 0; r < size; r++) {
+            for (let c = 0; c < size; c++) {
+              let dark = false;
+              if (r < 7 && c < 7) {
+                dark = finderBit(r, c);
+              } else if (r < 7 && c >= size - 7) {
+                dark = finderBit(r, c - (size - 7));
+              } else if (r >= size - 7 && c < 7) {
+                dark = finderBit(r - (size - 7), c);
+              } else if (r === 6 || c === 6) {
+                dark = (r + c) % 2 === 0;
+              } else if (!isFinderPattern(r, c)) {
+                const charCode = seedStr.charCodeAt((r * size + c) % seedStr.length);
+                dark = (r * 17 + c * 31 + charCode) % 7 < 4;
+              }
+              if (dark) {
+                cells.push(
+                  `<rect x="${c * 8 + 8}" y="${r * 8 + 8}" width="8" height="8" fill="#0f2219"/>`
+                );
+              }
+            }
+          }
+
+          return `
+            <svg width="184" height="184" viewBox="0 0 184 184" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Código QR Carta El Fogón">
+              <rect width="184" height="184" fill="#ffffff"/>
+              ${cells.join('')}
+              <rect x="64" y="76" width="56" height="32" rx="4" fill="#d4a253" stroke="#0f2219" stroke-width="2"/>
+              <text x="92" y="96" text-anchor="middle" fill="#0f2219" font-family="Georgia, serif" font-size="10" font-weight="bold">EL FOGÓN</text>
+            </svg>
+          `;
+        }
+
+        function renderAdminQrPreview() {
+          const box = document.getElementById('admin-qr-preview-box');
+          const label = document.getElementById('admin-qr-current-label');
+          const textInput = document.getElementById('admin-qr-text-input');
+          if (!box) return;
+
+          if (textInput && !textInput.value) {
+            textInput.value = qrConfig.text || 'https://elfogon.com.uy/#carta';
+          }
+
+          if (qrConfig.mode === 'image' && qrConfig.customImage) {
+            box.innerHTML = `<img src="${escapeHtml(qrConfig.customImage)}" alt="Código QR personalizado" style="width: 184px; height: 184px; object-fit: contain;" />`;
+            if (label) label.textContent = 'Mostrando imagen de QR subida desde su dispositivo';
+          } else {
+            box.innerHTML = generateQrSvgMarkup(qrConfig.text);
+            if (label) label.textContent = `Destino actual del QR: ${qrConfig.text}`;
+          }
+        }
+
+        window.updateQrFromText = function () {
+          const input = document.getElementById('admin-qr-text-input');
+          const val = (input ? input.value : '').trim();
+          if (!val) {
+            showToast('Escriba una dirección válida para el QR');
+            return;
+          }
+          qrConfig.mode = 'text';
+          qrConfig.text = val;
+          qrConfig.customImage = '';
+          saveQrConfig();
+          renderAdminQrPreview();
+          showToast('Código QR actualizado con éxito');
+        };
+
+        window.resetQrToDefault = function () {
+          qrConfig = {
+            mode: 'text',
+            text: window.location.origin + window.location.pathname + '#carta',
+            customImage: '',
+          };
+          const input = document.getElementById('admin-qr-text-input');
+          if (input) input.value = qrConfig.text;
+          saveQrConfig();
+          renderAdminQrPreview();
+          showToast('Código QR restaurado al valor original');
+        };
+
+        function syncAdminAuthView() {
+          const lockScreen = document.getElementById('admin-lock-screen');
+          const unlockedPanel = document.getElementById('admin-unlocked-panel');
+          const passInput = document.getElementById('admin-password-input');
+          if (!lockScreen || !unlockedPanel) return;
+
+          if (adminUnlocked) {
+            lockScreen.style.display = 'none';
+            unlockedPanel.style.display = 'block';
+            renderAdminVisualCards();
+            renderAdminQrPreview();
+          } else {
+            lockScreen.style.display = 'flex';
+            unlockedPanel.style.display = 'none';
+            if (passInput) passInput.value = '';
+          }
+        }
+
+        function triggerSecretAdminAccess() {
+          window.location.hash = '#admin';
+          const passInput = document.getElementById('admin-password-input');
+          if (passInput && !adminUnlocked) {
+            setTimeout(() => passInput.focus(), 80);
+          }
+        }
+
+        // ==================== HASH ROUTER (Sin apartado público #qr) ====================
+        const VALID_ROUTES = ['inicio', 'carta', 'historia', 'reservas', 'admin'];
+
+        window.navigateToHash = function (hashStr) {
+          window.location.hash = hashStr;
+        };
+
+        function handleHashChange() {
+          const rawHash = (window.location.hash || '#inicio').replace(/^#/, '').toLowerCase();
+          const activeRoute = VALID_ROUTES.includes(rawHash) ? rawHash : 'inicio';
+
+          VALID_ROUTES.forEach((route) => {
+            const viewEl = document.getElementById(`view-${route}`);
+            if (viewEl) {
+              viewEl.classList.toggle('active', route === activeRoute);
+            }
+          });
+
+          document.querySelectorAll('[data-route]').forEach((link) => {
+            const linkRoute = link.getAttribute('data-route');
+            link.classList.toggle('active', linkRoute === activeRoute);
+          });
+
+          if (activeRoute === 'admin') {
+            syncAdminAuthView();
+          } else if (activeRoute === 'carta') {
+            renderPublicMenu();
+          }
+
+          window.scrollTo({ top: 0, behavior: 'instant' });
+          observeRevealElements();
+        }
+
+        // ==================== INTERSECTION OBSERVER ====================
+        let revealObserver = null;
+
+        function observeRevealElements() {
+          const elements = document.querySelectorAll('.reveal-up:not([data-observed="1"])');
+          if (!('IntersectionObserver' in window)) return;
+
+          if (!revealObserver) {
+            revealObserver = new IntersectionObserver(
+              (entries) => {
+                entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                    entry.target.classList.remove('pending-reveal');
+                    revealObserver.unobserve(entry.target);
+                  }
+                });
+              },
+              { threshold: 0.08, rootMargin: '0px 0px -20px 0px' }
+            );
+          }
+
+          elements.forEach((el) => {
+            el.setAttribute('data-observed', '1');
+            const rect = el.getBoundingClientRect();
+            if (rect.top > window.innerHeight) {
+              el.classList.add('pending-reveal');
+              revealObserver.observe(el);
+            }
+          });
+        }
+
+        // ==================== EVENT LISTENERS ====================
+        function initEvents() {
+          const searchInput = document.getElementById('menu-search-input');
+          const clearBtn = document.getElementById('menu-search-clear');
+          if (searchInput) {
+            searchInput.addEventListener('input', function () {
+              searchQuery = this.value || '';
+              if (clearBtn) {
+                clearBtn.style.display = searchQuery.length > 0 ? 'block' : 'none';
+              }
+              renderPublicMenu();
+            });
+          }
+          if (clearBtn && searchInput) {
+            clearBtn.addEventListener('click', function () {
+              searchInput.value = '';
+              searchQuery = '';
+              clearBtn.style.display = 'none';
+              renderPublicMenu();
+              searchInput.focus();
+            });
+          }
+
+          document.querySelectorAll('#category-tabs-container .cat-filter-btn').forEach((btn) => {
+            btn.addEventListener('click', function () {
+              activeCategory = this.getAttribute('data-category') || 'todas';
+              syncCategoryTabsUI();
+              renderPublicMenu();
+            });
+          });
+
+          // Login del Admin
+          const loginForm = document.getElementById('admin-login-form');
+          if (loginForm) {
+            loginForm.addEventListener('submit', function (e) {
+              e.preventDefault();
+              const passInput = document.getElementById('admin-password-input');
+              const errorMsg = document.getElementById('admin-login-error');
+              const lockCard = document.getElementById('admin-lock-card');
+              const entered = (passInput ? passInput.value : '').trim();
+
+              if (entered === ADMIN_PASS) {
+                adminUnlocked = true;
+                if (errorMsg) errorMsg.style.display = 'none';
+                syncAdminAuthView();
+                showToast('Bienvenido al Panel de Administración');
+              } else {
+                if (errorMsg) errorMsg.style.display = 'block';
+                if (lockCard) {
+                  lockCard.classList.remove('shake');
+                  void lockCard.offsetWidth;
+                  lockCard.classList.add('shake');
+                }
+              }
+            });
+          }
+
+          // Subida de archivo desde Celular o PC para nuevo plato
+          const newDishFileInput = document.getElementById('new-dish-file');
+          const newDishPreview = document.getElementById('new-dish-preview');
+          const newDishStatus = document.getElementById('new-dish-file-status');
+          if (newDishFileInput) {
+            newDishFileInput.addEventListener('change', function () {
+              const file = this.files && this.files[0];
+              if (!file) return;
+              compressImageFileToDataURL(file, 680, 0.82)
+                .then((dataUrl) => {
+                  uploadedNewDishDataUrl = dataUrl;
+                  if (newDishPreview) {
+                    newDishPreview.src = dataUrl;
+                    newDishPreview.style.display = 'block';
+                  }
+                  if (newDishStatus) {
+                    newDishStatus.textContent = '✓ Foto cargada lista para guardar: ' + file.name;
+                  }
+                })
+                .catch(() => {
+                  showToast('Error al cargar la imagen');
+                });
+            });
+          }
+
+          // Subida de archivo desde Celular o PC para el Código QR en Admin
+          const qrFileInput = document.getElementById('admin-qr-file-input');
+          if (qrFileInput) {
+            qrFileInput.addEventListener('change', function () {
+              const file = this.files && this.files[0];
+              if (!file) return;
+              compressImageFileToDataURL(file, 500, 0.9)
+                .then((dataUrl) => {
+                  qrConfig.mode = 'image';
+                  qrConfig.customImage = dataUrl;
+                  saveQrConfig();
+                  renderAdminQrPreview();
+                  showToast('Imagen de Código QR actualizada desde su dispositivo');
+                })
+                .catch(() => {
+                  showToast('No se pudo cargar la imagen del QR');
+                });
+            });
+          }
+
+          // Formulario para agregar nuevo plato
+          const addDishForm = document.getElementById('admin-add-dish-form');
+          if (addDishForm) {
+            addDishForm.addEventListener('submit', function (e) {
+              e.preventDefault();
+              const nameEl = document.getElementById('new-dish-name');
+              const catEl = document.getElementById('new-dish-category');
+              const priceEl = document.getElementById('new-dish-price');
+              const descEl = document.getElementById('new-dish-desc');
+
+              const name = (nameEl ? nameEl.value : '').trim();
+              const category = (catEl ? catEl.value : 'parrilla').trim();
+              const price = Number(priceEl ? priceEl.value : 0);
+              const description =
+                (descEl ? descEl.value : '').trim() || 'Especialidad de la casa';
+
+              if (!name || !Number.isFinite(price) || price < 0) {
+                showToast('Por favor escriba el nombre y el precio del plato');
+                return;
+              }
+
+              const newDish = {
+                id: 'custom-' + Date.now(),
+                name,
+                category,
+                description,
+                price: Math.round(price),
+                image: uploadedNewDishDataUrl || IMG_PARRILLA_FUEGO,
+                badge: CATEGORY_LABELS[category] || 'Carta',
+                available: true,
+              };
+
+              menuDishes.unshift(newDish);
+              saveMenuToStorage();
+              renderAdminVisualCards();
+              renderPublicMenu();
+              addDishForm.reset();
+              uploadedNewDishDataUrl = '';
+              if (newDishPreview) newDishPreview.style.display = 'none';
+              if (newDishStatus) {
+                newDishStatus.textContent =
+                  'Si no sube una foto, se usará la foto oficial de El Fogón';
+              }
+              showToast(`Plato agregado a la carta: ${name}`);
+            });
+          }
+
+          const adminSearchInput = document.getElementById('admin-search-input');
+          const adminCatSelect = document.getElementById('admin-category-filter');
+          if (adminSearchInput) {
+            adminSearchInput.addEventListener('input', renderAdminVisualCards);
+          }
+          if (adminCatSelect) {
+            adminCatSelect.addEventListener('change', renderAdminVisualCards);
+          }
+
+          // 3 Métodos de Acceso Secreto al Admin (#admin, Alt+A, o escribir "admin")
+          window.addEventListener('keydown', function (e) {
+            if (e.altKey && e.key && e.key.toLowerCase() === 'a') {
+              e.preventDefault();
+              triggerSecretAdminAccess();
+              return;
+            }
+
+            const activeTag = document.activeElement
+              ? document.activeElement.tagName.toLowerCase()
+              : '';
+            const isEditable =
+              activeTag === 'input' ||
+              activeTag === 'textarea' ||
+              activeTag === 'select' ||
+              (document.activeElement && document.activeElement.isContentEditable);
+
+            if (isEditable || e.ctrlKey || e.metaKey || e.altKey) return;
+
+            if (e.key && e.key.length === 1) {
+              secretKeyBuffer = (secretKeyBuffer + e.key.toLowerCase()).slice(-5);
+              if (secretKeyBuffer === 'admin') {
+                secretKeyBuffer = '';
+                triggerSecretAdminAccess();
+              }
+            }
+          });
+
+          window.addEventListener('hashchange', handleHashChange);
+        }
+
+        // Inicialización general
+        loadMenuFromStorage();
+        loadQrConfig();
+        renderPublicMenu();
+        initEvents();
+        handleHashChange();
+      })();
+    </script>
+  </body>
+</html>

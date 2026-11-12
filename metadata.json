@@ -1,0 +1,6 @@
+{
+  "name": "El Fogón Parrillada — Montevideo 1962",
+  "description": "Sitio web oficial y carta digital interactiva de El Fogón Parrillada (San José 1080, Centro de Montevideo). Tradición en carnes asadas, cortes Dry Aged, pastas caseras, mariscos y cava de vinos desde 1962.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
